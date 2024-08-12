@@ -32,7 +32,11 @@
 
     typedef struct item_ ITEM;
 
-    ITEM *item_criar(int chave, void *comp);
+    ITEM *item_criar(int chave, void *comp); //cria o dado
+    bool item_apagar (ITEM **item); //apaga o dado
+    int item_get_chave (ITEM *item); //pega o identificador
+    bool item_set_chave (ITEM *item); //define uma informação (o identificador) sobre o daod
+    void *item_get_dados (ITEM *item); //pega uma informação sobre o dado
 #endif
 ```
 
@@ -49,7 +53,7 @@ struct item_{
 }
 //OBS: a struct está dentro do item.c para o cliente não acessá-la
 
-//exemplo de função no TAD
+//exemplos de funções no TAD:
 ITEM *item_criar(int chave, void *dado){
     ITEM *item;
     item = (ITEM *)malloc(sizeof(ITEM));
@@ -59,6 +63,35 @@ ITEM *item_criar(int chave, void *dado){
         item->dados = dado;
         return(item);
     }
+    return(NULL);
+}
+
+bool item_apagar(ITEM **item){
+    if(*item != NULL){
+        free(*item);
+        *item = NULL;
+        return(true);
+    }
+    return(false);
+}
+
+int item_get_chave(ITEM *item, int chave){
+    if(item != NULL)
+        return(item->chave);
+    return(NULL);
+}
+
+bool int_set_chave(ITEM *item, int chave){
+    if(item != NULL){
+        item->chave = chave;
+        return(true);
+    }
+    return false;
+}
+
+void item_get_dados (ITEM *item){
+    if(item != NULL)
+        return(item->dados);
     return(NULL);
 }
 ```
