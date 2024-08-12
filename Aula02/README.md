@@ -95,3 +95,24 @@ void item_get_dados (ITEM *item){
     return(NULL);
 }
 ```
+
+## Makefile
+- Forma normal de compilar:
+```bash
+gcc main.c item.c -Wall -std=c99 -o main
+```
+
+- Arquivo Makefile:
+```bash
+all: item.o main.o
+    gcc item.o main.o -o main -std=c99 -Wall
+
+item.o:
+    gcc -c item.c -o item.o
+
+main.o:
+    gcc -c main.c -o main.o
+
+clean:
+    rm *.o main
+```

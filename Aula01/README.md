@@ -30,3 +30,6 @@
         - prototipando uma struct no arquivo .h, não informamos o tamanho dela, mas por ser um ponteiro (na main), o compilador já sabe o tamanho do dado (ponteiro sempre tem 8 bytes)
             - se não fosse um ponteiro, teríamos que informar o tamanho da struct de algum outro jeito
         - em outras linguagens não precisa ser um ponteiro, só precisamos definir os dois módulos
+    - em outras palavras: uma ED é um TAD com ENCAPSULAMENTO e OCULTAMENTO DE INFORMAÇÃO!
+        - um TAD é um conjunto de dados/valores e operações que manipulam esses dados
+        - uma ED é a implementação do TAD
