@@ -23,7 +23,7 @@
 - a ED usará um item (abstração) e não dependerá do tipo de dado utilizado
 - o cliente pode declarar um float, int, array etc. e a ED funcionará sem precisar ser alterada
 
-## Arquivo item.h
+## Arquivo "item.h"
 ```c
 #ifndef ITEM_H //if not defined, para não incluir a biblioteca dnv se ela já tiver sido definida
     #define ITEM_H
@@ -40,7 +40,7 @@
 #endif
 ```
 
-## Arquivo item.c
+## Arquivo "item.c"
 ```c
 #include <stdlib.h>
 #include <stdio.h>
@@ -102,7 +102,7 @@ void item_get_dados (ITEM *item){
 gcc main.c item.c -Wall -std=c99 -o main
 ```
 
-- Arquivo Makefile:
+- Arquivo "Makefile":
 ```bash
 all: item.o main.o
     gcc item.o main.o -o main -std=c99 -Wall
