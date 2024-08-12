@@ -4,7 +4,7 @@
 - organizar
 - armazenar
 - processar
--> implementada por meio de um TAD
+- implementada por meio de um TAD
 
 ## TAD
 - DADOS
@@ -15,8 +15,9 @@
     - imprimir
     - apagar
     - processar
-    -> devem ser independentes do tipo de dado que vai ser utilizado
-        -> ITEM
+    - devem ser independentes do tipo de dado que vai ser utilizado
+        - ITEM
+
 ### ITEM
 - o cliente que escolhe o tipo de dado na main
 - a ED usará um item (abstração) e não dependerá do tipo de dado utilizado
