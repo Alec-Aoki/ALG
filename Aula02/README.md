@@ -1,12 +1,12 @@
-#Tipos Abstratos de Dados (II)
+# Tipos Abstratos de Dados (II)
 
-##Estrutura de **Dados**
+## Estrutura de **Dados**
 - organizar
 - armazenar
 - processar
 -> implementada por meio de um TAD
 
-##TAD
+## TAD
 - DADOS
     - inacessíveis ao cliente
 - FUNÇÕES
@@ -17,12 +17,12 @@
     - processar
     -> devem ser independentes do tipo de dado que vai ser utilizado
         -> ITEM
-###ITEM
+### ITEM
 - o cliente que escolhe o tipo de dado na main
 - a ED usará um item (abstração) e não dependerá do tipo de dado utilizado
 - o cliente pode declarar um float, int, array etc. e a ED funcionará sem precisar ser alterada
 
-##Arquivo item.h
+## Arquivo item.h
 ```c
 #ifndef ITEM_H //if not defined, para não incluir a biblioteca dnv se ela já tiver sido definida
     #define ITEM_H
@@ -35,7 +35,7 @@
 #endif
 ```
 
-##Arquivo item.c
+## Arquivo item.c
 ```c
 #include <stdlib.h>
 #include <stdio.h>
