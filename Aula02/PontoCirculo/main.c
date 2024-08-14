@@ -74,5 +74,5 @@ void printarCirculo(CIRCULO *circulo){
     PONTO *ponto = circulo_get_ponto(circulo);
     if(ponto == NULL) return;
 
-    printf("Circulo: Centro(%.1f, %.1f), Raio = %.1f\n", ponto_get_x(ponto), ponto_get_y(ponto), circulo_get_raio(circulo));
+    printf("Circulo: Centro (%.1f, %.1f), Raio = %.1f\n", ponto_get_x(ponto), ponto_get_y(ponto), circulo_get_raio(circulo));
 }

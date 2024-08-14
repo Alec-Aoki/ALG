@@ -15,3 +15,6 @@ clean:
 
 run:
 	./main
+
+zip:
+	zip -R entrega.zip . '*.c' '*.h' 'Makefile'
