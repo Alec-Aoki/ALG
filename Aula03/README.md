@@ -77,7 +77,7 @@
 
         pilha->topo -= 1; //atualizando o topo
 
-        //ainda temos que apagar o item usando o tad dele
+        //quem vai apagar o item vai ser o cliente!
 
         return itemTemp;
     }
