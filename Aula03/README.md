@@ -40,6 +40,12 @@
 
 ## TAD Pilha (Sequencial)
 
+
+### Implementação Sequencial
+-> + simples <br />
+-> **vetor** alocado **dinamicamente**, com tamanho fixo <br />
+-> uso de uma variável auxiliar "topo/tamanho", que guarda o índice do topo (espaço livre para receber um elemento) <br />
+
 ### Struct
 ```c
     struct pilha{
@@ -147,12 +153,3 @@
 ```c
     void pilha_inverter(PILHA *pilha);
 ```
-
-## Implementação Sequencial
--> + simples <br />
--> **vetor** alocado **dinamicamente**, com tamanho fixo <br />
--> uso de uma variável auxiliar "topo/tamanho", que guarda o índice do topo (espaço livre para receber um elemento) <br />
-
-## Implementação Encadeada
-
-## Aplicações com Pilha
