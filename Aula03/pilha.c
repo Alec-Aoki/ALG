@@ -23,6 +23,12 @@ PILHA *pilha_criar(void){
 
 void pilha_apagar(PILHA **pilha){
     if(*pilha != NULL){
+
+        int tam_pilha = pilha_tamanho(*pilha);
+        for (int i=0; i<tam_pilha; i++){
+            item_apagar(&((*pilha)->item[i]));
+        }
+
         free(*pilha);
         *pilha = NULL;
     }
