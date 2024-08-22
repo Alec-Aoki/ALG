@@ -40,7 +40,6 @@
 
 ## TAD Pilha (Sequencial)
 
-
 ### Implementação Sequencial
 -> + simples <br />
 -> **vetor** alocado **dinamicamente**, com tamanho fixo <br />
