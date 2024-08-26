@@ -25,8 +25,8 @@ struct no_{
 };
 
 struct pilha_{
-    NO *noTopo;
-    int topo;
+    NO *noTopo; //aponta para o nó no topo da pilha
+    int topo; //quantidade de nós na pilha
 };
 ```
 
@@ -53,14 +53,23 @@ bool pilha_empilhar(PILHA *pilha, ITEM *item){
 }
 ```
 
-- **DESEMPILHAR (incompleto)**
+- **DESEMPILHAR**
 ```c
-ITEM pilha_desempilhar(PILHA *pilha){
+ITEM *pilha_desempilhar(PILHA *pilha){
     if(pilha_vazia(pilha)) return NULL;
 
-    (pilha->topo)--;
+    ITEM *itemAux = (pilha->noTopo)->item;
 
-    return itemTemp;
+    NO *noAux = pilha->noTopo;
+
+    pilha->noTopo = noAux->proximoNo;
+
+    noAux->proximoNo = NULL;
+    noAux->item = NULL;
+    free(noAux);
+    
+    (pilha->topo)--;
+    return itemAux;
 }
 ```
 
@@ -77,5 +86,44 @@ PILHA *pilha_criar(void){
     }
         
     return ponteiroPilha;
+}
+```
+- verificar se a pilha está cheia
+```c
+bool pilha_cheia(PILHA *pilha){
+    if(pilha == NULL) return false;
+
+    NO *noVerificacao = (NO *)malloc(sizeof(NO));
+    if (noVerificacao != NULL){
+        free(noVerificacao);
+        return false; //não há mais espaço para alocar nós
+    }
+    //else
+    return true;
+}
+```
+- apagar a pilha (e os nós)
+```c
+void pilha_apagar(PILHA **pilha){
+    if(*pilha == NULL) return;
+
+    while((*pilha)->topo > 0){
+        /*desempilhar e apagar o item*/
+        /*poderia ter sido feito chamando a função desempilhar*/
+        NO *noAux = (*pilha)->noTopo;
+
+        (*pilha)->noTopo = noAux->proximoNo;
+
+        item_apagar(noAux->item);
+        noAux->proximoNo = NULL;
+        noAux->item = NULL;
+        free(noAux);
+        
+        ((*pilha)->topo)--;
+    }
+
+    free(*pilha);
+    *pilha = NULL;
+    return;
 }
 ```
