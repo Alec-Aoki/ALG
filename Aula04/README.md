@@ -5,6 +5,7 @@
 
 ### Struct Sequencial
 -> utiliza um vetor estático
+-> sabemos o tamanho da pilha *a priori*
 ```c
 struct pilha{
     ITEM *item[TAM]; //vetor de ponteiros para itens, ESTÁTICO
@@ -14,6 +15,7 @@ struct pilha{
 
 ### Struct Dinâmica
 -> utiliza **NÓS**
+-> **não precisamos saber o tamanho da pilha!**
 ```c
 typedef no_ NO;
 typedef pilha_ PILHA;
