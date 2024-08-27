@@ -7,6 +7,7 @@
   #define TAM 1005
 
   typedef struct pilha PILHA;
+  typedef struct no NO;
 
   PILHA* pilha_criar(void);
   void pilha_apagar(PILHA** pilha);

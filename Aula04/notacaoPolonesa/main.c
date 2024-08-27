@@ -11,7 +11,7 @@ int main(void){
 
     scanf(" %s", string);
 
-    printf("%f\n", rpn(string));
+    printf("\n%.2f\n", rpn(&string[0]));
 
     return 0;
 }

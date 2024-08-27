@@ -31,7 +31,7 @@ bool item_apagar(ITEM **item){
 }
 
 int item_get_chave(ITEM *item){
-    if(item == NULL) return 0; //NULL character
+    if(item == NULL) return 0;
 
     return item->ID;
 }
