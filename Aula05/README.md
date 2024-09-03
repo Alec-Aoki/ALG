@@ -18,14 +18,16 @@ c
         - o ponteiro fim aponta para espaço seguinte ao último elemento da fila
             - adicionar elemento: adicionar o elemento no espaço apontado e mover o ponteiro uma posição pra frente
         - contador de quantidade de elementos
+    - todas as operações são O(1)
 
 - encadeada: alocação dinâmica, uso de nós e os ponteiros início e fim
+    - todas as operações são O(1), com exceção do apagar, que é O(n)
 
 ### Operações Principais
 - struct fila
 ```c
 struct fila_{
-    ITEM *item[TAM_MAX];
+    ITEM *item[TAM_MAX]; //sequencial
     int inicio;
     int fim;
     int total;
@@ -69,6 +71,8 @@ ITEM *fila_remover(FILA *fila){
     ITEM *itemAux = fila->item[fila->inicio];
     fila->item[fila->inicio] = NULL;
     (fila->inicio)++;
+
+    return itemAux;
 }
 ```
 
@@ -86,6 +90,7 @@ ITEM *fila_frente(FILA *fila){
 ```c
 int fila_tamanho(FILA *fila){
     if(fila == NULL) return -1;
+
     return fila->total;
 }
 ```
@@ -107,3 +112,90 @@ bool fila_vazia(FILA *fila){
     return false;
 }
 ```
+
+## Deques
+-> Double Ended QUEue <br />
+-> permitem remover e adicionar das duas pontas <br />
+- implementação **sequencial**: circular
+    - struct e operações similares à fila sequencial
+    - remover do fim
+    ```c
+    ITEM *remover_fim(DEQUE *deque){
+        if(DEQUE == NULL || deque_vazio(deque)) return NULL;
+
+        ITEM *itemAux = deque->item[(deque->fim)-1];
+        deque->item[(deque->fim)-1] = NULL;
+        (deque->item)--;
+
+        deque->total--;
+        return itemAux;
+    }
+    ```
+    - inserir no início
+    ```c
+    bool inserir_inicio(DEQUE *deque, ITEM *item){
+        if(DEQUE == NULL || item == NULL) return false;
+        if(deque_cheio(deque)) return false;
+
+        if(deque->inicio == 0){
+            deque->inicio = deque->total;
+        }
+        else{
+            (deque->inicio)--;
+        }
+
+        deque->item[deque->inicio] = item;
+        deque->total++;
+
+        return true;
+    }
+    ```
+    - O(1)
+- implementação **dinâmica**: duplamente encadeada
+    - O(1)
+
+### Operações Principais
+```c
+struct no_{
+    ITEM *pontItem;
+    NO* noAnterior;
+    NO* noSeguinte;
+};
+
+typedef struct no_ NO;
+
+struct deque_{
+    NO* noInicio;
+    NO* noFim;
+    int total;
+};
+
+typedef struct deque_ DEQUE;
+```
+
+- inserir no início
+```c
+```
+
+- remover do início
+```c
+```
+
+- inserir no fim
+```c
+```
+
+- remover do fim
+```c
+```
+
+### Operações Auxiliares
+- retornar elemento no início
+
+- retornar elemento no fim
+
+- retornar quantidade total de elementos
+
+- verificar se está vazio
+
+- verificar se está cheio
