@@ -1,5 +1,5 @@
 # FILAS E DEQUES
-## Filas (Sequenciais)
+## Filas
 -> política "FIFO" -> First In First Out <br />
 -> o primeiro elemento a entrar será o primeiro a ser retirado <br />
 ```
@@ -11,13 +11,15 @@ b c
 c
 
 ```
--> sequencial: elementos contíguos na memória, espaço alocado constante<br />
-- implementação **circular**
-    - o ponteiro início aponta para o primeiro elemento da fila
-        - remover elemento: anular o espaço apontado por início e mover o ponteiro para o próximo espaço
-    - o ponteiro fim aponta para espaço seguinte ao último elemento da fila
-        - adicionar elemento: adicionar o elemento no espaço apontado e mover o ponteiro uma posição pra frente
-    - contador de quantidade de elementos
+- **sequencial**: elementos contíguos na memória, espaço alocado constante
+    - implementação **circular**
+        - o ponteiro início aponta para o primeiro elemento da fila
+            - remover elemento: anular o espaço apontado por início e mover o ponteiro para o próximo espaço
+        - o ponteiro fim aponta para espaço seguinte ao último elemento da fila
+            - adicionar elemento: adicionar o elemento no espaço apontado e mover o ponteiro uma posição pra frente
+        - contador de quantidade de elementos
+
+- encadeada: alocação dinâmica, uso de nós e os ponteiros início e fim
 
 ### Operações Principais
 - struct fila
