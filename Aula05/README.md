@@ -1,7 +1,23 @@
 # FILAS E DEQUES
 ## Filas (Sequenciais)
 -> política "FIFO" -> First In First Out <br />
--> implementação **circular**
+-> o primeiro elemento a entrar será o primeiro a ser retirado <br />
+```
+
+a
+a b
+a b c
+b c
+c
+
+```
+-> sequencial: elementos contíguos na memória, espaço alocado constante<br />
+- implementação **circular**
+    - o ponteiro início aponta para o primeiro elemento da fila
+        - remover elemento: anular o espaço apontado por início e mover o ponteiro para o próximo espaço
+    - o ponteiro fim aponta para espaço seguinte ao último elemento da fila
+        - adicionar elemento: adicionar o elemento no espaço apontado e mover o ponteiro uma posição pra frente
+    - contador de quantidade de elementos
 
 ### Operações Principais
 - struct fila
@@ -48,6 +64,9 @@ ITEM *fila_remover(FILA *fila){
     if(fila == NULL) return NULL;
     if(fila_vazia(fila)) return NULL;
 
+    ITEM *itemAux = fila->item[fila->inicio];
+    fila->item[fila->inicio] = NULL;
+    (fila->inicio)++;
 }
 ```
 
@@ -64,13 +83,16 @@ ITEM *fila_frente(FILA *fila){
 - verifica o tamanho da fila
 ```c
 int fila_tamanho(FILA *fila){
+    if(fila == NULL) return -1;
     return fila->total;
 }
 ```
 - verifica se a fila está cheia
 ```c
 bool fila_cheia(FILA *fila){
-    if(fila->total == TAM) return true;
+    if(fila != NULL){
+        if(fila->total == TAM) return true;
+    }
     
     return false;
 }
