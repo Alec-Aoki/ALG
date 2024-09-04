@@ -120,32 +120,38 @@ bool fila_vazia(FILA *fila){
     - struct e operações similares à fila sequencial
     - remover do fim
     ```c
-    ITEM *remover_fim(DEQUE *deque){
-        if(DEQUE == NULL || deque_vazio(deque)) return NULL;
+    ITEM* deque_remover_fim(DEQUE* deque){
+        if(deque == NULL) return NULL;
+        if(deque_vazia(deque)) return NULL;
 
-        ITEM *itemAux = deque->item[(deque->fim)-1];
-        deque->item[(deque->fim)-1] = NULL;
-        (deque->item)--;
+        if(deque->fim == 0){
+            deque->fim = MAX_TAMANHO-1;
+        }
+        else{
+            (deque->fim)--;
+        }
 
-        deque->total--;
+        ITEM *itemAux = deque->item[deque->fim];
+        deque->item[deque->fim] = NULL;
+
         return itemAux;
     }
     ```
     - inserir no início
     ```c
-    bool inserir_inicio(DEQUE *deque, ITEM *item){
-        if(DEQUE == NULL || item == NULL) return false;
-        if(deque_cheio(deque)) return false;
+    bool deque_inserir_inicio(DEQUE* deque, ITEM* item){
+        if(deque == NULL || item == NULL) return false;
+        if(deque_cheia(deque)) return false;
 
-        if(deque->inicio == 0){
-            deque->inicio = deque->total;
+        if(deque->inicio == 0 && deque->item[deque->inicio] != NULL){
+            deque->inicio = MAX_TAMANHO-1;
         }
-        else{
+        else if (deque->inicio != 0){
             (deque->inicio)--;
         }
 
         deque->item[deque->inicio] = item;
-        deque->total++;
+        (deque->total)++;
 
         return true;
     }
