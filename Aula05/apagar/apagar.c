@@ -23,3 +23,31 @@
 
     typedef filaObj FILA;
 #endif
+
+void fila_apagar(FILA **fila);
+void apagar_no(NO *no);
+
+void fila_apagar(FILA **fila){
+    apagar_no((*fila)->fim);
+    
+    free(*fila);
+    *fila = NULL;
+    return;
+}
+
+void apagar_no(NO *no){
+    if(no->proximo != NULL){
+        apagar_no(no->proximo);
+        no->proximo = NULL;
+    }
+
+    if(no->proximo == NULL){
+        item_apagar(&(no->item));
+        no->item = NULL;
+        
+        free(no);
+        //no = NULL;
+
+        return;
+    }
+}
