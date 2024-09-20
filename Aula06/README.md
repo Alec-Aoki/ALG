@@ -123,7 +123,7 @@ ITEM *lista_remover(LISTA *lista, int chave){
     if(lista_vazia(lista)) return NULL;
 
     int itemAux = lista_busca(lista, chave);
-    posicaoItem = item_get_chave(itemAux);
+    int posicaoItem = item_get_chave(itemAux);
 
     lista->fim--; //lista->fim agora guarda o index do elemento no fim da lista
 
@@ -146,7 +146,7 @@ ITEM *lista_busca(LISTA *lista, int chave){
     if(lista_vazia(lista)) return NULL;
 
     int posicaoItem = -1;
-    if(lista->balanceada){
+    if(lista->ordenada){
         posicaoItem = lista_busca_ordenada(lista, chave);
     }
     else{
