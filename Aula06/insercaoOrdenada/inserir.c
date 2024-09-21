@@ -17,7 +17,6 @@
 #endif
 
 bool lista_inserir(LISTA *lista, ITEM *item);
-int lista_busca_ordenada(LISTA *lista, int chave);
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave);
 bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
 
@@ -25,40 +24,23 @@ bool lista_inserir(LISTA *lista, ITEM *item){
     if(lista == NULL) return false;
     if(lista->tamanho == TAM_MAX) return false;
 
-    int posicao = lista_busca_ordenada(lista, item_get_chave(item));
+    int posicao = busca_binaria(lista, lista->inicio, lista->fim-1, item_get_chave(item));
         
     return lista_inserir_posicao(lista, item, posicao);
 }
 
-int lista_busca_ordenada(LISTA *lista, int chave){
-    if(lista == NULL) return -1;
-
-    return busca_binaria(lista, lista->inicio, lista->fim-1, chave);
-}
-
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave){
-    int meio = (inicio + fim)/2;
-    if(lista->lista[meio] == NULL){
-        return 0;
-    }
-    
-    int chaveMeio = item_get_chave(lista->lista[meio]);
 
-    if((chave > chaveMeio) && (chave <= item_get_chave(lista->lista[fim]))){
-        if(chave < item_get_chave(lista->lista[meio+1])){
-            return meio+1;
+    while(inicio <= fim){
+        int meio = (inicio+fim)/2;
+        int chaveMeio = item_get_chave(lista->lista[meio]);
+
+        if(chave > chaveMeio){
+
         }
-        return busca_binaria(lista, meio+1, fim, chave);
     }
-    else if ((chave < chaveMeio) && (chave >= item_get_chave(lista->lista[inicio]))){
-        if(chave > item_get_chave(lista->lista[meio-1])){
-            return meio-1;
-        }
-        return busca_binaria(lista, inicio, meio-1, chave);
-    }
-    else{
-        return fim+1;
-    }
+
+    return 0;
 }
 
 bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
