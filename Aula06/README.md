@@ -102,10 +102,8 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
     if(lista_cheia(lista)) return false;
 
     /*shiftando todos os elementos da lista para a direita, abrindo espaço pro novo item*/
-    if(posicao <= (lista->fim)-1){
-        for(int i = (lista->fim)-1; i >= posicao; i--){
-            lista->item[i+1] = lista->item[i];
-        }
+    for(int i = (lista->fim)-1; i >= posicao; i--){
+        lista->item[i+1] = lista->item[i];
     }
 
     lista->item[posicao] = item;
@@ -196,20 +194,20 @@ int lista_busca_ordenada(LISTA *lista, int chave){
 
 ```c
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave){
-    int meio = (inicio + fim)/2;
-    int chaveMeio = item_get_chave(lista->item[meio]);
+    if(fim == -1) return 0;
 
-    if(chaveMeio == chave){
-        return meio;
+    while(inicio < fim){
+        int meio=(inicio+fim)/2;
+        
+        if(chave <= item_get_chave(lista->lista[meio])) fim = meio;
+        else{
+            inicio = meio+1;
+        }
     }
-    else if((chave > chaveMeio) && (chave < item_get_chave(lista->item[fim]))){
-        return busca_binaria(lista, meio+1, fim, chave);
-    }
-    else if ((chave < chaveMeio) && (chave > item_get_chave(lista->item[inicio]))){
-        return busca_binaria(lista, inicio, meio-1, chave);
-    }
+
+    if(item_get_chave(lista->lista[inicio]) >= chave) return inicio;
     else{
-        return -1;
+        return fim+1;
     }
 }
 ```

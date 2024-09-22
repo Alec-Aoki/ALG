@@ -30,28 +30,30 @@ bool lista_inserir(LISTA *lista, ITEM *item){
 }
 
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave){
+    if(fim == -1) return 0;
 
-    while(inicio <= fim){
-        int meio = (inicio+fim)/2;
-        int chaveMeio = item_get_chave(lista->lista[meio]);
-
-        if(chave > chaveMeio){
-
+    while(inicio < fim){
+        int meio=(inicio+fim)/2;
+        
+        if(chave <= item_get_chave(lista->lista[meio])) fim = meio;
+        else{
+            inicio = meio+1;
         }
     }
 
-    return 0;
+    if(item_get_chave(lista->lista[inicio]) >= chave) return inicio;
+    else{
+        return fim+1;
+    }
 }
 
 bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
     if(lista == NULL) return false;
-    if(lista_cheia(lista)) return false;
+    if(lista->tamanho == TAM_MAX) return false;
 
     /*shiftando todos os elementos da lista para a direita, abrindo espaço pro novo item*/
-    if(posicao <= (lista->fim)-1){
-        for(int i = (lista->fim)-1; i >= posicao; i--){
-            lista->lista[i+1] = lista->lista[i];
-        }
+    for(int i = (lista->fim)-1; i >= posicao; i--){
+        lista->lista[i+1] = lista->lista[i];
     }
 
     lista->lista[posicao] = item;

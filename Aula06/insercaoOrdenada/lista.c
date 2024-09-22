@@ -16,9 +16,7 @@ struct lista_{
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
 int lista_busca_sequencial(LISTA *lista, int chave);
-int lista_busca_ordenada(LISTA *lista, int chave);
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave);
-
 
 LISTA *lista_criar(void){
     LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
@@ -37,15 +35,11 @@ bool lista_inserir(LISTA *lista, ITEM *item){
     if(lista == NULL) return false;
     if(lista_cheia(lista)) return false;
 
-    printf("Item a ser inserido: %d\n", item_get_chave(item));
-
     if(!lista->ordenada){
-        printf("Inserindo fim\n");
         return lista_inserir_fim(lista, item);
     }
     else{
-        int posicao = lista_busca_ordenada(lista, item_get_chave(item));
-        printf("Posicao onde inserir: %d\n", posicao);
+        int posicao = busca_binaria(lista, lista->inicio, lista->fim-1, item_get_chave(item));
         
         return lista_inserir_posicao(lista, item, posicao);
     }
@@ -67,17 +61,13 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
     if(lista_cheia(lista)) return false;
 
     /*shiftando todos os elementos da lista para a direita, abrindo espaço pro novo item*/
-    if(posicao <= (lista->fim)-1){
-        for(int i = (lista->fim)-1; i >= posicao; i--){
-            lista->item[i+1] = lista->item[i];
-        }
+    for(int i = (lista->fim)-1; i >= posicao; i--){
+        lista->item[i+1] = lista->item[i];
     }
 
     lista->item[posicao] = item;
     lista->fim++;
     //lista->tamanho++;
-
-    printf("Item inserido: %d\n", item_get_chave(item));
 
     return true;
 }
@@ -89,46 +79,30 @@ int lista_busca_sequencial(LISTA *lista, int chave){
         if(item_get_chave(lista->item[i]) == chave) return i;
     }
 
-    return -3;
-}
-
-int lista_busca_ordenada(LISTA *lista, int chave){
-    if(lista == NULL){
-        return -4;
-    }
-
-    return busca_binaria(lista, lista->inicio, lista->fim-1, chave);
+    return -1;
 }
 
 int busca_binaria(LISTA *lista, int inicio, int fim, int chave){
-    int meio = (inicio + fim)/2;
-    if(lista->item[meio] == NULL){
-        return 0;
-    }
-    
-    int chaveMeio = item_get_chave(lista->item[meio]);
+    if(lista == NULL);
+    if(fim == -1) return 0;
 
-    if((chave > chaveMeio) && (chave <= item_get_chave(lista->item[fim]))){
-        if(chave < item_get_chave(lista->item[meio+1])){
-            return meio+1;
+    while(inicio < fim){
+        int meio=(inicio+fim)/2;
+        
+        if(chave <= item_get_chave(lista->item[meio])) fim = meio;
+        else{
+            inicio = meio+1;
         }
-        printf("Maior\n");
-        return busca_binaria(lista, meio+1, fim, chave);
     }
-    else if ((chave < chaveMeio) && (chave >= item_get_chave(lista->item[inicio]))){
-        if(chave > item_get_chave(lista->item[meio-1])){
-            return meio-1;
-        }
-        printf("Menor\n");
-        return busca_binaria(lista, inicio, meio-1, chave);
-    }
+
+    if(item_get_chave(lista->item[inicio]) >= chave) return inicio;
     else{
         return fim+1;
     }
 }
 
 int lista_tamanho(LISTA *lista){
-    if(lista == NULL) return -6;
+    if(lista == NULL) return -1;
 
     return lista->fim;
 }
@@ -151,7 +125,7 @@ void lista_imprimir(LISTA *lista){
     if(lista == NULL) return;
 
     for(int i=0; i<(lista->fim-1); i++){
-        printf("[%d]; ", item_get_chave(lista->item[i]));
+        printf("%d ", item_get_chave(lista->item[i]));
     }
-    printf("[%d];\n", item_get_chave(lista->item[lista->fim-1]));
+    printf("%d\n", item_get_chave(lista->item[lista->fim-1]));
 }
