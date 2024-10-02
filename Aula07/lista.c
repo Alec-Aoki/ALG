@@ -56,7 +56,9 @@ ITEM *lista_remover(LISTA *lista, int chave){
     NO *pontNo = lista->inicio;
     while(pontNo != NULL){
         if(chave == item_getChave(pontNo->pontItem)) break;
-        pontNo = pontNo->noSeguinte;
+        else{
+            pontNo = pontNo->noSeguinte;
+        }
     }
 
     if(pontNo == lista->inicio){
@@ -145,8 +147,10 @@ bool lista_cheia(LISTA *lista){
     }
 }
 
+void lista_imprimir(LISTA *lista){
+    if(lista == NULL) exit(1);
+}
 
-void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
 bool lista_comparar(LISTA *l1, LISTA *l2);
 
