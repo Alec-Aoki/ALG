@@ -87,7 +87,7 @@ ITEM *lista_remover(LISTA *lista, int chave){
 }
 
 bool lista_apagar(LISTA **lista){
-    if(*lista == NULL) return true;
+    if(*lista == NULL) exit(1);
 
     NO *pontNo = (*lista)->inicio;
 
@@ -131,6 +131,7 @@ bool lista_vazia(LISTA *lista){
         return false;
     }
 }
+
 bool lista_cheia(LISTA *lista);
 void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
