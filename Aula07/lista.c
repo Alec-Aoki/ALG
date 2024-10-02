@@ -132,7 +132,20 @@ bool lista_vazia(LISTA *lista){
     }
 }
 
-bool lista_cheia(LISTA *lista);
+bool lista_cheia(LISTA *lista){
+    if(lista == NULL) exit(1);
+
+    NO *noTeste = (NO *)malloc(sizeof(NO));
+    if(noTeste == NULL) return true;
+    else{
+        free(noTeste);
+        noTeste = NULL;
+
+        return false;
+    }
+}
+
+
 void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
 bool lista_comparar(LISTA *l1, LISTA *l2);
