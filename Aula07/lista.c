@@ -123,7 +123,14 @@ int lista_tamanho(LISTA *lista){
     return lista->tamanho;
 }
 
-bool lista_vazia(LISTA *lista);
+bool lista_vazia(LISTA *lista){
+    if(lista == NULL) exit(1);
+
+    if(lista->tamanho == 0) return true;
+    else{
+        return false;
+    }
+}
 bool lista_cheia(LISTA *lista);
 void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
