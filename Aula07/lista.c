@@ -20,7 +20,7 @@ struct lista_{
     bool ordenada;
 };
 
-bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
+bool lista_inserir_posicao(LISTA *lista, ITEM *item);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 
 LISTA *lista_criar(bool ordenacao){
@@ -39,9 +39,7 @@ bool lista_inserir(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
 
     if(lista->ordenada){
-        int posicao = lista_busca(lista, item_get_chave(item));
-
-        lista_inserir_posicao(lista, item, posicao);
+        lista_inserir_posicao(lista, item);
     }
     else{
         lista_inserir_fim(lista, item);
@@ -96,12 +94,31 @@ void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
 bool lista_comparar(LISTA *l1, LISTA *l2);
 
-ITEM *lista_busca(LISTA *lista, int chave);
+ITEM *lista_busca(LISTA *lista, int chave){
+    if(lista == NULL) exit(1);
 
+    NO *pontNo = lista->inicio;
 
-bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
+    for(int i=0; i<lista->tamanho; i++){
+        int chaveAux = item_getChave(pontNo->pontItem);
+
+        if(chave == chaveAux){
+            return pontNo->pontItem;
+        }
+        else{
+            pontNo = pontNo->noSeguinte;
+            if(pontNo == NULL) return NULL;
+        }
+    }
+}
+
+bool lista_inserir_posicao(LISTA *lista, ITEM *item){
+    if(lista == NULL) exit(1);
+
     NO *noNovo = (NO *)malloc(sizeof(NO));
     if(noNovo == NULL) exit(1);
+    noNovo->noAnterior = NULL;
+    noNovo->noSeguinte = NULL;
 
     int chaveItem = item_getChave(item);
     NO* pontNo = lista->inicio;
