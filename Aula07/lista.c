@@ -161,7 +161,31 @@ void lista_imprimir(LISTA *lista){
     return;
 }
 
-int lista_inverter(LISTA **lista);
+bool lista_inverter(LISTA *lista){
+    if(lista == NULL) exit(1);
+    if(lista->tamanho == 0) return false;
+
+    NO *pontNo = lista->inicio;
+
+    /*invertendo os ponteiros do primeiro nó*/
+    pontNo->noAnterior = pontNo->noSeguinte;
+    pontNo->noSeguinte = NULL;
+    pontNo = pontNo->noAnterior;
+
+    for(int i=0; i<lista->tamanho-1; i++){
+        pontNo->noAnterior = pontNo->noSeguinte;
+        pontNo->noSeguinte = pontNo;
+        pontNo = pontNo->noAnterior;
+        if(pontNo == NULL) break;
+    }
+
+    pontNo = lista->fim;
+    lista->fim = lista->inicio;
+    lista->inicio = pontNo;
+
+    return true;
+}
+
 bool lista_comparar(LISTA *l1, LISTA *l2);
 
 ITEM *lista_busca(LISTA *lista, int chave){
