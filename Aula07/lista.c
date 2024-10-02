@@ -86,7 +86,37 @@ ITEM *lista_remover(LISTA *lista, int chave){
     return pontItem_aux;
 }
 
-bool lista_apagar(LISTA **lista);
+bool lista_apagar(LISTA **lista){
+    if(*lista == NULL) return true;
+
+    NO *pontNo = (*lista)->inicio;
+
+    for(int i=0; i<(*lista)->tamanho; i++){
+        item_apagar(pontNo->pontItem);
+        pontNo->pontItem = NULL;
+
+        (*lista)->inicio = pontNo->noSeguinte;
+        pontNo->noAnterior = NULL;
+        pontNo->noSeguinte = NULL;
+        free(pontNo);
+        pontNo = (*lista)->inicio;
+
+        (*lista)->tamanho--;
+    }
+
+    if((*lista)->tamanho == 0){
+        (*lista)->inicio = NULL;
+        (*lista)->fim = NULL;
+        free(*lista);
+        lista = NULL;
+
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 int lista_tamanho(LISTA *lista);
 bool lista_vazia(LISTA *lista);
 bool lista_cheia(LISTA *lista);
