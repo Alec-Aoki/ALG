@@ -117,7 +117,12 @@ bool lista_apagar(LISTA **lista){
     }
 }
 
-int lista_tamanho(LISTA *lista);
+int lista_tamanho(LISTA *lista){
+    if(lista == NULL) exit(1);
+
+    return lista->tamanho;
+}
+
 bool lista_vazia(LISTA *lista);
 bool lista_cheia(LISTA *lista);
 void lista_imprimir(LISTA *lista);
