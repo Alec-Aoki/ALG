@@ -149,6 +149,16 @@ bool lista_cheia(LISTA *lista){
 
 void lista_imprimir(LISTA *lista){
     if(lista == NULL) exit(1);
+
+    NO *pontNo = lista->inicio;
+    
+    for(int i=0; i<lista->tamanho-1; i++){
+        pritnf("%d ", item_getChave(pontNo->pontItem));
+        pontNo = pontNo->noSeguinte;
+    }
+    printf("%d\n", item_getChave(pontNo->pontItem));
+
+    return;
 }
 
 int lista_inverter(LISTA **lista);
