@@ -20,7 +20,7 @@ struct lista_{
     bool ordenada;
 };
 
-lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
+bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 
 LISTA *lista_criar(bool ordenacao){
@@ -56,7 +56,8 @@ ITEM *lista_remover(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
 
     NO *pontNo = lista->inicio;
-    while((pontNo != NULL) && (chave != item_getChave(pontNo->pontItem))){
+    while(pontNo != NULL){
+        if(chave == item_getChave(pontNo->pontItem)) break;
         pontNo = pontNo->noSeguinte;
     }
 
@@ -88,7 +89,6 @@ ITEM *lista_remover(LISTA *lista, int chave){
 }
 
 bool lista_apagar(LISTA **lista);
-ITEM *lista_busca(LISTA *lista, int chave);
 int lista_tamanho(LISTA *lista);
 bool lista_vazia(LISTA *lista);
 bool lista_cheia(LISTA *lista);
@@ -96,7 +96,44 @@ void lista_imprimir(LISTA *lista);
 int lista_inverter(LISTA **lista);
 bool lista_comparar(LISTA *l1, LISTA *l2);
 
-lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao);
+ITEM *lista_busca(LISTA *lista, int chave);
+
+
+bool lista_inserir_posicao(LISTA *lista, ITEM *item, int posicao){
+    NO *noNovo = (NO *)malloc(sizeof(NO));
+    if(noNovo == NULL) exit(1);
+
+    int chaveItem = item_getChave(item);
+    NO* pontNo = lista->inicio;
+
+    for(int i=0; i<lista->tamanho; i++){
+        if(chaveItem < item_getChave(pontNo->pontItem)){
+            if(pontNo == lista->inicio){
+                noNovo->noSeguinte = lista->inicio;
+                lista->inicio = noNovo;
+            }
+            else{
+                noNovo->noSeguinte = pontNo;
+                pontNo->noAnterior->noSeguinte = noNovo;
+            }
+
+            lista->tamanho++;
+            
+            return true;
+        }
+        else{
+            pontNo = pontNo->noSeguinte;
+            if(pontNo == NULL) break;
+        }
+    }
+
+    /*O item não pertence nem ao início nem ao meio da lista, logo inserimos no fim*/
+    lista->fim->noSeguinte = noNovo;
+    lista->fim = noNovo;
+    lista->tamanho++;
+
+    return true;
+}
 
 bool lista_inserir_fim(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
