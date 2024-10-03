@@ -38,6 +38,7 @@ LISTA *lista_criar(bool ordenacao){
 
 bool lista_inserir(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
+    if(lista_cheia(lista)) return false;
 
     if(lista->ordenada){
         lista_inserir_posicao(lista, item);
