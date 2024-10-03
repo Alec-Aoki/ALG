@@ -23,6 +23,7 @@ struct lista_{
 bool lista_inserir_posicao(LISTA *lista, ITEM *item);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 ITEM *lista_busca_sequencial(LISTA *lista, int chave);
+ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
 LISTA *lista_criar(bool ordenacao){
     LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
@@ -211,7 +212,23 @@ ITEM *lista_busca(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
     if(lista->tamanho == 0) exit(1);
 
-    return lista_busca_sequencial(lista, chave);
+    if(lista->ordenada) return lista_busca_ordenada(lista, chave);
+    else if(!lista->ordenada) return lista_busca_sequencial(lista, chave);
+}
+
+ITEM *lista_busca_ordenada(LISTA *lista, int chave){
+    if(lista == NULL) exit(1);
+
+    NO *pontNo = lista->inicio;
+
+    for(int i=0; i<lista->tamanho; i++){
+        if(item_getChave(pontNo->pontItem) == chave) return pontNo->pontItem;
+        else if(item_getChave(pontNo->pontItem) > chave) return NULL;
+        else{
+            pontNo = pontNo->noSeguinte;
+            if(pontNo == NULL) return NULL;
+        }
+    }
 }
 
 ITEM *lista_busca_sequencial(LISTA *lista, int chave){
@@ -223,11 +240,9 @@ ITEM *lista_busca_sequencial(LISTA *lista, int chave){
         if(item_getChave(pontNo->pontItem) == chave) return pontNo->pontItem;
         else{
             pontNo = pontNo->noSeguinte;
-            if(pontNo == NULL) break;
+            if(pontNo == NULL) return NULL;
         }
     }
-
-    return NULL;
 }
 
 bool lista_inserir_posicao(LISTA *lista, ITEM *item){
