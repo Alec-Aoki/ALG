@@ -57,15 +57,14 @@
     }
     // função que imprime a melhor rota
     void imprimir_caminho (int *caminho, int n) {
-        printf("Melhor Caminho : ");
         for (int i = 0; i < n; i++) {
             if(i!=0)
-                printf("-> %d ", caminho[i]);
+                printf("-%d", caminho[i]);
             else {
-                printf("%d ", caminho[i]);
+                printf("%d", caminho[i]);
             }
         }
-         printf("-> %d\n",caminho[0]); 
+         printf("-%d ",caminho[0]); 
     }
 
     //funções para alocar memória para vetores auxiliares, um de booleanos para conferir se já foi visitado, e o outro para guardar a melhor rota
@@ -119,9 +118,8 @@
         caminho[0] = ini+1;    
 
         int answer = PCV(ini, n, visitado, matriz, ini, caminho, 1);
-        printf("Custo Total : %d\n", answer);
         imprimir_caminho(caminho, n);
-       
+        printf("%d\n", answer);
 
 
 
