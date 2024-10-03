@@ -1,5 +1,5 @@
 # Melhorias em Operações das Listas
-## Listas Encadeadas com Nó Cabeça
+## Listas Encadeadas com Nó Cabeça (Não Ordenada)
 - operação mais complexa da lista simplesmente encadeada: **remoção**
     - ela é a mesma para todos os nós da lista, exceto para o primeiro
     - nó cabeça = nó que vem antes do nó de início -> remove essa exceção!!
@@ -59,7 +59,40 @@
     }
     ```
 
-## Listas Encadeadas Circulares
+## Listas Encadeadas Circulares (Não Ordenada)
+- beneficia a operação de **busca**
+- não usa um ponteiro de início, já que o ponteiro de fim aponta para o início (inicio = fim->noSeguinte)
+- utiliza um nó sentinela (similar ao cabeça)
+    - noSentinela = lista->fim->noSeguinte
+    - inserimos nossa chave no noSentinela
+    - percorremos a lista sem checar se chegamos no fim
+    - ao encontrarmos a chave, saimos do loop e verificamos se para onde estamos apontado é o nó Sentinela
+        - se for, a chave não está presente na lista
+        - se não for, a chave está presente na lista
+- a busca continua O(n), mas realizamos menos comparações
+```c
+typedef struct lista_{
+    NO *sentinela;
+    NO *fim;
+    int tamanho;
+    bool ordenada;
+} LISTA;
 
+ITEM *lista_busca(LISTA *lista, int chave){
+    if(lista == NULL) exit(1);
+
+    item_setChave(&(lista->sentinela->item), chave);
+    NO *pontNo = lista->sentinela;
+
+    do{
+        pontNo = pontNo->noSeguinte;
+    }while(item_getChave(pontNo) != chave);
+
+    if(pontNo == lista->sentinela) return NULL;
+    else{
+        return pontNo->item;
+    }
+}
+```
 
 ## Listas Encadeadas Ordenadas
