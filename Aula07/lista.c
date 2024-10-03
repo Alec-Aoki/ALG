@@ -23,7 +23,6 @@ struct lista_{
 bool lista_inserir_posicao(LISTA *lista, ITEM *item);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 ITEM *lista_busca_sequencial(LISTA *lista, int chave);
-ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
 LISTA *lista_criar(bool ordenacao){
     LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
@@ -211,13 +210,7 @@ ITEM *lista_busca(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
     if(lista->tamanho == 0) exit(1);
 
-    int posicaoItem = -1;
-    if(lista->ordenada){
-        return lista_busca_ordenada(lista, chave);
-    }
-    else{
-        return lista_busca_sequencial(lista, chave);
-    }
+    return lista_busca_sequencial(lista, chave);
 }
 
 ITEM *lista_busca_sequencial(LISTA *lista, int chave){
@@ -226,7 +219,7 @@ ITEM *lista_busca_sequencial(LISTA *lista, int chave){
     NO *pontNo = lista->inicio;
 
     for(int i=0; i<lista->tamanho; i++){
-        if(item_getChave(pontNo) == chave) return pontNo->pontItem;
+        if(item_getChave(pontNo->pontItem) == chave) return pontNo->pontItem;
         else{
             pontNo = pontNo->noSeguinte;
             if(pontNo == NULL) break;
@@ -235,8 +228,6 @@ ITEM *lista_busca_sequencial(LISTA *lista, int chave){
 
     return NULL;
 }
-
-ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
 bool lista_inserir_posicao(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
