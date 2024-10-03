@@ -220,7 +220,22 @@ ITEM *lista_busca(LISTA *lista, int chave){
     }
 }
 
-ITEM *lista_busca_sequencial(LISTA *lista, int chave);
+ITEM *lista_busca_sequencial(LISTA *lista, int chave){
+    if(lista == NULL) exit(1);
+
+    NO *pontNo = lista->inicio;
+
+    for(int i=0; i<lista->tamanho; i++){
+        if(item_getChave(pontNo) == chave) return pontNo->pontItem;
+        else{
+            pontNo = pontNo->noSeguinte;
+            if(pontNo == NULL) break;
+        }
+    }
+
+    return NULL;
+}
+
 ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
 bool lista_inserir_posicao(LISTA *lista, ITEM *item){
