@@ -10,7 +10,7 @@
         NO *cabeca;
         NO *fim;
         int tamanho;
-        bool ordenada;
+        bool ordenada = false;
     } LISTA;
 
     LISTA *lista_criar(bool ordenacao){
@@ -69,13 +69,13 @@
     - ao encontrarmos a chave, saimos do loop e verificamos se para onde estamos apontado é o nó Sentinela
         - se for, a chave não está presente na lista
         - se não for, a chave está presente na lista
-- a busca continua O(n), mas realizamos menos comparações
+- a busca continua $O(n)$, mas realizamos menos comparações
 ```c
 typedef struct lista_{
     NO *sentinela;
     NO *fim;
     int tamanho;
-    bool ordenada;
+    bool ordenada = false;
 } LISTA;
 
 ITEM *lista_busca(LISTA *lista, int chave){
@@ -96,3 +96,38 @@ ITEM *lista_busca(LISTA *lista, int chave){
 ```
 
 ## Listas Encadeadas Ordenadas
+- o ponteiro de fim não é necessário pois a inserção irá ocorrer em qualquer lugar da lista
+- o emprego do nó cabeça **é valido**
+- Inserir Ordenado $O(n)$ x Inserir no Fim e Ordernar Logo Depois $O(n log(n))$
+    - inserir ordenado é mais barato!
+```c
+typedef struct lista_{
+    NO *cabeca;
+    int tamanho;
+    bool ordenada = true;
+} LISTA;
+
+bool lista_inserir_ordenada(LISTA *lista, ITEM *item){
+    if(lista == NULL) exit(1);
+    if(lista_cheia(lista)) return false;
+
+    NO *pontNo = lista->cabeca;
+    int chave = item_getChave(item);
+
+    while(pontNo->noSeguinte != NULL){
+        if(chave > item_getChave(pontNo->noSeguinte->item)) pontNo = pontNo->noSeguinte;
+    }
+
+    NO *noNovo = (NO *)malloc(sizeof(NO));
+    if(noNovo == NULL) exit(1);
+    noNovo->item = item;
+    noNovo->noSeguinte = pontNo->noSeguinte;
+    pontNo->noSeguinte = noNovo;
+
+    //if(noNovo->noSeguinte == NULL) lista->fim = noNovo;
+
+    lista->tamanho++;
+
+    return true;
+}
+```
