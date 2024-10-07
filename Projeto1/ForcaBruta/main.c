@@ -5,9 +5,8 @@ int main(){
     int num_cidades, cidade_inicial, arestas;
 
     INDICE* distancia = PCV_ler_dados(&num_cidades, &cidade_inicial, &arestas);
-    Permutacao* caminhos = PCV_criar_caminhos(num_cidades, cidade_inicial, arestas, distancia);
-    PCV_Melhor_caminho(caminhos, distancia, num_cidades, arestas);
-    //PCV_Apagar(distancia, caminhos, num_cidades);
+    PERMUTACAO* melhor_caminho = PCV_Melhor_Caminho(num_cidades, cidade_inicial, arestas, distancia);
+    PCV_Apagar(distancia, melhor_caminho);
     
     return 0;
 }

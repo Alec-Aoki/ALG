@@ -5,13 +5,13 @@
 	#include <stdbool.h>
 
     typedef struct Fila_ Fila;
-    typedef struct Permutacao_ Permutacao;
+	typedef struct PERMUTACAO_ PERMUTACAO;
 
 	void Fila_Inicializar(Fila **fila);
 	bool Fila_Vazia(Fila *fila);
 	bool Fila_Cheia(Fila *fila);
-	void Fila_Enfileirar(Fila *fila, Permutacao *p);
-	Permutacao* Fila_Desenfileirar(Fila *fila);
+	void Fila_Enfileirar(Fila *fila, PERMUTACAO *p);
+	PERMUTACAO* Fila_Desenfileirar(Fila *fila);
 	void Fila_Apagar(Fila *fila);
 	  
 #endif

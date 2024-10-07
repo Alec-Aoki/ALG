@@ -6,7 +6,7 @@
 
 // Nó da fila encadeada
 typedef struct No {
-    Permutacao *permutacao;
+    PERMUTACAO *permutacao;
     struct No *proximo;
 } No;
 
@@ -34,7 +34,7 @@ bool Fila_Vazia(Fila *fila) {
 }
 
 // Insere uma permutação parcial na fila
-void Fila_Enfileirar(Fila *fila, Permutacao *p) {
+void Fila_Enfileirar(Fila *fila, PERMUTACAO *p) {
     No *novoNo = (No*) malloc(sizeof(No));
     if (novoNo == NULL) {
         printf("Erro ao alocar memória para o nó da fila.\n");
@@ -53,14 +53,14 @@ void Fila_Enfileirar(Fila *fila, Permutacao *p) {
 }
 
 // Remove uma permutação parcial da fila
-Permutacao* Fila_Desenfileirar(Fila *fila) {
+PERMUTACAO* Fila_Desenfileirar(Fila *fila) {
     if (Fila_Vazia(fila)) {
         printf("Erro: Fila vazia\n");
         exit(1);
     }
 
     No *temp = fila->inicio;
-    Permutacao *permutacao = temp->permutacao;
+    PERMUTACAO *permutacao = temp->permutacao;
     fila->inicio = fila->inicio->proximo;
 
     if (fila->inicio == NULL) {
@@ -74,7 +74,7 @@ Permutacao* Fila_Desenfileirar(Fila *fila) {
 // Libera a memória da fila
 void Fila_Apagar(Fila *fila) {
     while (!Fila_Vazia(fila)) {
-        Permutacao* p = Fila_Desenfileirar(fila);
+        PERMUTACAO* p = Fila_Desenfileirar(fila);
         free(p); // Libera a permutação
     }
     free(fila);  // Libera a estrutura da fila

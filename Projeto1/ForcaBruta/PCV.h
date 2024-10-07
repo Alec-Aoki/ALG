@@ -3,12 +3,12 @@
 
     #include "fila.h"
 
-    typedef struct Indice_ INDICE;
-    typedef struct Permutacao_ Permutacao;
+    typedef struct INDICE_ INDICE;
+    typedef struct PERMUTACAO_ PERMUTACAO;
 
     INDICE* PCV_ler_dados(int *num,  int *cidade_inicial, int *arestas);
-    Permutacao* PCV_criar_caminhos(int num_cidades, int cidade_inicial, int arestas, INDICE* distancia);
-    void PCV_Melhor_caminho(Permutacao* caminhos, INDICE* distancia, int num_cidades, int arestas);
-    void PCV_Apagar(INDICE* distancia, Permutacao* caminhos, int num_cidades);
-    
+    PERMUTACAO* PCV_Melhor_Caminho(int num_cidades, int cidade_inicial, int arestas, INDICE* distancia);
+    void PCV_Apagar(INDICE* distancia, PERMUTACAO* melhor_caminho);
+
+
 #endif
