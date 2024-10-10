@@ -180,7 +180,7 @@ bool lista_cheia(LISTA *lista){
     NO *noTeste = no_criar(NULL, NULL, NULL);
 
     if(noTeste == NULL) return true;
-    
+
     else{
         free(noTeste);
         noTeste = NULL;
@@ -189,16 +189,26 @@ bool lista_cheia(LISTA *lista){
     }
 }
 
-void lista_imprimir(LISTA *lista){
+void lista_imprimir(LISTA *lista, bool comQuebraDeLinha){
     if(lista == NULL) exit(1);
 
-    NO *pontNo = lista->inicio;
-    
-    for(int i=0; i<lista->tamanho-1; i++){
-        pritnf("%d ", item_getChave(pontNo->pontItem));
-        pontNo = pontNo->noSeguinte;
+    NO *noPercorrer = lista->noCabeca->noSeguinte;
+
+    if(comQuebraDeLinha){
+        while(noPercorrer != lista->noCabeca){
+            printf("%d\n", item_getChave(noPercorrer->pontItem));
+            noPercorrer = noPercorrer->noSeguinte;
+        }
+
+        return;
     }
-    printf("%d\n", item_getChave(pontNo->pontItem));
+
+    //else:
+    for(int i=0; i<lista->tamanho-1; i++){
+        printf("%d ", item_getChave(noPercorrer->pontItem));
+        noPercorrer = noPercorrer->noSeguinte;
+    }
+    printf("%d\n", item_getChave(noPercorrer->pontItem));
 
     return;
 }
