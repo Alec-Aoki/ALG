@@ -215,10 +215,12 @@ void lista_imprimir(LISTA *lista, bool comQuebraDeLinha){
 
 ITEM *lista_busca(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
-    if(lista->tamanho == 0) exit(1);
+    if(lista_vazia(lista)) return NULL;
 
     if(lista->ordenada) return lista_busca_ordenada(lista, chave);
-    else if(!lista->ordenada) return lista_busca_sequencial(lista, chave);
+    else{
+        return lista_busca_sequencial(lista, chave);
+    }
 }
 
 ITEM *lista_busca_ordenada(LISTA *lista, int chave){
