@@ -124,12 +124,11 @@ ITEM *lista_remover(LISTA *lista, int chave){
         item_apagar(&(lista->noCabeca->pontItem));
         lista->noCabeca->pontItem = NULL;
         
-        printf("Chave não encontrada, retornando NULL\n");
         return NULL;
     }
     
 
-
+    pontNoBusca
 
 
     NO *pontNo = lista->inicio;
