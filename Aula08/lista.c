@@ -177,8 +177,10 @@ bool lista_vazia(LISTA *lista){
 bool lista_cheia(LISTA *lista){
     if(lista == NULL) exit(1);
 
-    NO *noTeste = (NO *)malloc(sizeof(NO));
+    NO *noTeste = no_criar(NULL, NULL, NULL);
+
     if(noTeste == NULL) return true;
+    
     else{
         free(noTeste);
         noTeste = NULL;
