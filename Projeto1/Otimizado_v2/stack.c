@@ -122,10 +122,11 @@ void pilha_desempilha_imprime (PILHA *pilha) {
             if (i == 0) {
                 printf("%d", aux);
             } else {
-                printf("-%d", aux);
+                printf(" - %d", aux);
             }
             i++;
         }
+        printf("\n");
+        
     }
 }
-

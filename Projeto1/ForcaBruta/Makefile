@@ -1,23 +1,17 @@
-# Compila todos os arquivos e gera o executável 'cliente'
-all: clean cliente run
+all: main.o fila.o PCV.o
+	gcc main.o fila.o PCV.o -o main -std=c99 -Wall
 
-PCV.o: PCV.c PCV.h 
-	gcc -c PCV.c -o PCV.o -std=c99 -Wall
+fila.o:
+	gcc -c fila.c
 
-fila.o: fila.c fila.h
-	gcc -c fila.c -o fila.o -std=c99 -Wall
+PCV.o:
+	gcc -c PCV.c
 
-main.o: main.c fila.h PCV.h
-	gcc -c main.c -o main.o -std=c99 -Wall
+main.o:
+	gcc -c main.c
 
-# Gera o executável 'cliente' a partir dos arquivos objetos
-cliente: main.o fila.o PCV.o
-	gcc main.o fila.o PCV.o -o cliente -std=c99 -Wall -lm
-
-# Regra para executar o programa 'cliente'
-run: cliente
-	./cliente
-
-# Remove todos os arquivos objetos e o executável gerado
 clean:
-	rm -f *.o cliente
+	rm *.o main
+
+run:
+	./main
