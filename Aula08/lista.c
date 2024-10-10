@@ -89,7 +89,7 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
 
     lista->noCabeca->pontItem = item;
 
-    while(chaveItem > item_getChave(pontNoBusca)){
+    while(chaveItem > item_getChave(pontNoBusca->pontItem)){
         pontNoBusca = pontNoBusca->noSeguinte;
     }
 
