@@ -147,7 +147,7 @@ bool lista_apagar(LISTA **lista){
     if(*lista == NULL) exit(1);
 
     NO *pontNoBusca = (*lista)->noCabeca->noSeguinte;
-    
+
     while(!lista_vazia(*lista)){
         int chaveAtual = item_getChave(pontNoBusca->pontItem);
         ITEM *itemTemp = lista_remover(*lista, chaveAtual);
@@ -169,9 +169,9 @@ bool lista_vazia(LISTA *lista){
     if(lista == NULL) exit(1);
 
     if(lista->tamanho == 0) return true;
-    else{
-        return false;
-    }
+    
+    //else:
+    return false;
 }
 
 bool lista_cheia(LISTA *lista){
