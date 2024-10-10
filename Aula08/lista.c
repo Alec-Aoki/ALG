@@ -121,49 +121,26 @@ ITEM *lista_remover(LISTA *lista, int chave){
     }
 
     if(pontNoBusca == lista->noCabeca){
-        item_apagar(&(lista->noCabeca->pontItem));
+        item_apagar(&itemTempCabeca);
         lista->noCabeca->pontItem = NULL;
         
         return NULL;
     }
     
+    //else:
+    pontNoBusca->noAnterior->noSeguinte = pontNoBusca->noSeguinte;
+    pontNoBusca->noSeguinte->noAnterior = pontNoBusca->noAnterior;
 
-    pontNoBusca
-
-
-    NO *pontNo = lista->inicio;
-    while(pontNo != NULL){
-        if(chave == item_getChave(pontNo->pontItem)) break;
-        else{
-            pontNo = pontNo->noSeguinte;
-        }
-    }
-
-    if(pontNo == lista->inicio){
-        lista->inicio = pontNo->noSeguinte;
-        lista->inicio->noAnterior = NULL;
-    }
-    else if(pontNo == lista->fim){
-        lista->fim = pontNo->noAnterior;
-        lista->fim->noSeguinte = NULL;
-    }
-    else{
-        pontNo->noAnterior->noSeguinte = pontNo->noSeguinte;
-        pontNo->noSeguinte->noAnterior = pontNo->noAnterior;
-    }
-    
-    ITEM *pontItem_aux;
-    pontItem_aux = pontNo->pontItem;
-
-    pontNo->noAnterior = NULL;
-    pontNo->noSeguinte = NULL;
-    pontNo->pontItem = NULL;
-    free(pontNo);
-    pontNo = NULL;
+    pontNoBusca->noAnterior = NULL;
+    pontNoBusca->noSeguinte = NULL;
+    ITEM *itemRemovido = pontNoBusca->pontItem;
+    pontNoBusca->pontItem = NULL;
+    free(pontNoBusca);
+    pontNoBusca = NULL;
 
     lista->tamanho--;
 
-    return pontItem_aux;
+    return itemRemovido;
 }
 
 bool lista_apagar(LISTA **lista){
