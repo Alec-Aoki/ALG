@@ -116,7 +116,7 @@ ITEM *lista_remover(LISTA *lista, int chave){
     lista->noCabeca->pontItem = itemTempCabeca;
     NO *pontNoBusca = lista->noCabeca->noSeguinte;
 
-    while(item_getChave(pontNoBusca) != chave){
+    while(item_getChave(pontNoBusca->pontItem) != chave){
         pontNoBusca = pontNoBusca->noSeguinte;
     }
 
