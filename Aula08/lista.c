@@ -14,7 +14,7 @@ struct no_{
 };
 
 struct lista_{
-    NO *cabeca;
+    NO *noCabeca;
     int tamanho;
     bool ordenada;
 };
@@ -71,10 +71,10 @@ bool lista_inserir(LISTA *lista, ITEM *item){
 bool lista_inserir_fim(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
 
-    NO *noNovo = no_criar(lista->cabeca->noAnterior, lista->cabeca, item);
+    NO *noNovo = no_criar(lista->noCabeca->noAnterior, lista->noCabeca, item);
 
-    lista->cabeca->noAnterior->noSeguinte = noNovo;
-    lista->cabeca->noAnterior = noNovo;
+    lista->noCabeca->noAnterior->noSeguinte = noNovo;
+    lista->noCabeca->noAnterior = noNovo;
 
     lista->tamanho++;
 
@@ -84,13 +84,8 @@ bool lista_inserir_fim(LISTA *lista, ITEM *item){
 bool lista_inserir_posicao(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
 
-    NO *noNovo = (NO *)malloc(sizeof(NO));
-    if(noNovo == NULL) exit(1);
-    noNovo->noAnterior = NULL;
-    noNovo->noSeguinte = NULL;
-
     int chaveItem = item_getChave(item);
-    NO* pontNo = lista->inicio;
+    NO *pontNoAux = lista->noCabeca->noSeguinte;
 
     for(int i=0; i<lista->tamanho; i++){
         if(chaveItem < item_getChave(pontNo->pontItem)){
