@@ -215,39 +215,21 @@ void lista_imprimir(LISTA *lista, bool comQuebraDeLinha){
 
 ITEM *lista_busca(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
-    if(lista_vazia(lista)) return NULL;
 
-    if(lista->ordenada) return lista_busca_ordenada(lista, chave);
-    else{
-        return lista_busca_sequencial(lista, chave);
+    ITEM *itemTempCabeca = item_criar(NULL, chave);
+    lista->noCabeca->pontItem = itemTempCabeca;
+
+    NO *pontNoBusca = lista->noCabeca->noSeguinte;
+    while(item_getChave(pontNoBusca) != chave){
+        pontNoBusca = pontNoBusca->noSeguinte;
     }
-}
 
-ITEM *lista_busca_ordenada(LISTA *lista, int chave){
-    if(lista == NULL) exit(1);
+    if(pontNoBusca == lista->noCabeca){
+        item_apagar(&itemTempCabeca);
+        lista->noCabeca->pontItem = NULL;
 
-    NO *pontNo = lista->inicio;
-
-    for(int i=0; i<lista->tamanho; i++){
-        if(item_getChave(pontNo->pontItem) == chave) return pontNo->pontItem;
-        else if(item_getChave(pontNo->pontItem) > chave) return NULL;
-        else{
-            pontNo = pontNo->noSeguinte;
-            if(pontNo == NULL) return NULL;
-        }
+        return NULL;
     }
-}
-
-ITEM *lista_busca_sequencial(LISTA *lista, int chave){
-    if(lista == NULL) exit(1);
-
-    NO *pontNo = lista->inicio;
-
-    for(int i=0; i<lista->tamanho; i++){
-        if(item_getChave(pontNo->pontItem) == chave) return pontNo->pontItem;
-        else{
-            pontNo = pontNo->noSeguinte;
-            if(pontNo == NULL) return NULL;
-        }
-    }
+    //else:
+    return pontNoBusca->pontItem;
 }
