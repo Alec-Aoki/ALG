@@ -146,32 +146,17 @@ ITEM *lista_remover(LISTA *lista, int chave){
 bool lista_apagar(LISTA **lista){
     if(*lista == NULL) exit(1);
 
-    NO *pontNo = (*lista)->inicio;
-
-    for(int i=0; i<(*lista)->tamanho; i++){
-        item_apagar(pontNo->pontItem);
-        pontNo->pontItem = NULL;
-
-        (*lista)->inicio = pontNo->noSeguinte;
-        pontNo->noAnterior = NULL;
-        pontNo->noSeguinte = NULL;
-        free(pontNo);
-        pontNo = (*lista)->inicio;
-
-        (*lista)->tamanho--;
+    NO *pontNoBusca = (*lista)->noCabeca->noSeguinte;
+    
+    while(!lista_vazia(*lista)){
+        int chaveAtual = item_getChave(pontNoBusca->pontItem);
+        ITEM *itemTemp = lista_remover(*lista, chaveAtual);
+        item_apagar(&itemTemp);
+        
+        pontNoBusca = pontNoBusca->noSeguinte;
     }
 
-    if((*lista)->tamanho == 0){
-        (*lista)->inicio = NULL;
-        (*lista)->fim = NULL;
-        free(*lista);
-        lista = NULL;
-
-        return true;
-    }
-    else{
-        return false;
-    }
+    return true;
 }
 
 int lista_tamanho(LISTA *lista){
