@@ -43,7 +43,7 @@ LISTA *lista_criar(bool ordenacao){
     NO *noCabeca = no_criar(NULL, NULL, NULL);
     noCabeca->noAnterior = noCabeca;
     noCabeca->noSeguinte = noCabeca;
-    
+
     /* Verificar se
         NO *noCabeca = no_criar(noCabeca, noCabeca, NULL);
     funcionaria
@@ -76,6 +76,46 @@ bool lista_inserir_fim(LISTA *lista, ITEM *item){
     lista->cabeca->noAnterior->noSeguinte = noNovo;
     lista->cabeca->noAnterior = noNovo;
 
+    lista->tamanho++;
+
+    return true;
+}
+
+bool lista_inserir_posicao(LISTA *lista, ITEM *item){
+    if(lista == NULL) exit(1);
+
+    NO *noNovo = (NO *)malloc(sizeof(NO));
+    if(noNovo == NULL) exit(1);
+    noNovo->noAnterior = NULL;
+    noNovo->noSeguinte = NULL;
+
+    int chaveItem = item_getChave(item);
+    NO* pontNo = lista->inicio;
+
+    for(int i=0; i<lista->tamanho; i++){
+        if(chaveItem < item_getChave(pontNo->pontItem)){
+            if(pontNo == lista->inicio){
+                noNovo->noSeguinte = lista->inicio;
+                lista->inicio = noNovo;
+            }
+            else{
+                noNovo->noSeguinte = pontNo;
+                pontNo->noAnterior->noSeguinte = noNovo;
+            }
+
+            lista->tamanho++;
+            
+            return true;
+        }
+        else{
+            pontNo = pontNo->noSeguinte;
+            if(pontNo == NULL) break;
+        }
+    }
+
+    /*O item não pertence nem ao início nem ao meio da lista, logo inserimos no fim*/
+    lista->fim->noSeguinte = noNovo;
+    lista->fim = noNovo;
     lista->tamanho++;
 
     return true;
@@ -271,44 +311,4 @@ ITEM *lista_busca_sequencial(LISTA *lista, int chave){
             if(pontNo == NULL) return NULL;
         }
     }
-}
-
-bool lista_inserir_posicao(LISTA *lista, ITEM *item){
-    if(lista == NULL) exit(1);
-
-    NO *noNovo = (NO *)malloc(sizeof(NO));
-    if(noNovo == NULL) exit(1);
-    noNovo->noAnterior = NULL;
-    noNovo->noSeguinte = NULL;
-
-    int chaveItem = item_getChave(item);
-    NO* pontNo = lista->inicio;
-
-    for(int i=0; i<lista->tamanho; i++){
-        if(chaveItem < item_getChave(pontNo->pontItem)){
-            if(pontNo == lista->inicio){
-                noNovo->noSeguinte = lista->inicio;
-                lista->inicio = noNovo;
-            }
-            else{
-                noNovo->noSeguinte = pontNo;
-                pontNo->noAnterior->noSeguinte = noNovo;
-            }
-
-            lista->tamanho++;
-            
-            return true;
-        }
-        else{
-            pontNo = pontNo->noSeguinte;
-            if(pontNo == NULL) break;
-        }
-    }
-
-    /*O item não pertence nem ao início nem ao meio da lista, logo inserimos no fim*/
-    lista->fim->noSeguinte = noNovo;
-    lista->fim = noNovo;
-    lista->tamanho++;
-
-    return true;
 }
