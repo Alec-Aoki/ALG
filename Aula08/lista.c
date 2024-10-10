@@ -14,12 +14,12 @@ struct no_{
 };
 
 struct lista_{
-    NO *inicio;
-    NO *fim;
+    NO *cabeca;
     int tamanho;
     bool ordenada;
 };
 
+NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item);
 bool lista_inserir_posicao(LISTA *lista, ITEM *item);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
 ITEM *lista_busca_sequencial(LISTA *lista, int chave);
@@ -29,8 +29,9 @@ LISTA *lista_criar(bool ordenacao){
     LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
     if(lista == NULL) exit(1);
 
-    lista->inicio = NULL;
-    lista->fim = NULL;
+    NO *noCabeca = no_criar(NULL, NULL, NULL);
+
+    lista->cabeca = noCabeca;
     lista->tamanho = 0;
     lista->ordenada = ordenacao;
 
@@ -292,17 +293,15 @@ bool lista_inserir_fim(LISTA *lista, ITEM *item){
     if(noNovo == NULL) exit(1);
 
     noNovo->pontItem = item;
-    noNovo->noAnterior = lista->fim;
-    noNovo->noSeguinte = NULL;
-        
-    if(lista->tamanho == 0){
-        lista->inicio = noNovo;
-    }
-    else{
-        lista->fim->noSeguinte = noNovo;
-    }
-
-    lista->fim = noNovo;
 
     return true;
+}
+
+NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item){
+    NO *noNovo = (NO *)malloc(sizeof(NO));
+    if(noNovo == NULL) exit(1);
+
+    noNovo->pontItem = item;
+    noNovo->noAnterior = noAnterior;
+    noNovo->noSeguinte = noSeguinte;
 }
