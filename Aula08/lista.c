@@ -87,22 +87,26 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
     int chaveItem = item_getChave(item);
     NO *pontNoBusca = lista->noCabeca->noSeguinte;
 
-    for(int i=0; i<lista->tamanho; i++){
-        if(chaveItem < item_getChave(pontNoBusca->pontItem)){
-           NO *noNovo = no_criar(pontNoBusca->noAnterior, pontNoBusca, item);
+    lista->noCabeca->pontItem = item;
 
-           pontNoBusca->noAnterior->noSeguinte = noNovo;
-           pontNoBusca->noAnterior = noNovo;
-
-           lista->tamanho++;
-           return true;
-        }
-        else{
-            pontNoBusca = pontNoBusca->noSeguinte;
-        }
+    while(chaveItem > item_getChave(pontNoBusca)){
+        pontNoBusca = pontNoBusca->noSeguinte;
     }
 
-    return lista_inserir_fim(lista, item);
+    if(pontNoBusca == lista->noCabeca){
+        lista->noCabeca->pontItem = NULL;
+        return lista_inserir_fim(lista, item);
+    }
+    else{
+        NO *noNovo = no_criar(pontNoBusca->noAnterior, pontNoBusca, item);
+
+        pontNoBusca->noAnterior->noSeguinte = noNovo;
+        pontNoBusca->noAnterior = noNovo;
+
+        lista->tamanho++;
+        
+        return true;
+    }
 }
 
 ITEM *lista_remover(LISTA *lista, int chave){
