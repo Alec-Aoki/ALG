@@ -97,20 +97,40 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
         lista->noCabeca->pontItem = NULL;
         return lista_inserir_fim(lista, item);
     }
-    else{
-        NO *noNovo = no_criar(pontNoBusca->noAnterior, pontNoBusca, item);
+    
+    //else:
+    NO *noNovo = no_criar(pontNoBusca->noAnterior, pontNoBusca, item);
 
-        pontNoBusca->noAnterior->noSeguinte = noNovo;
-        pontNoBusca->noAnterior = noNovo;
+    pontNoBusca->noAnterior->noSeguinte = noNovo;
+    pontNoBusca->noAnterior = noNovo;
 
-        lista->tamanho++;
+    lista->tamanho++;
         
-        return true;
-    }
+    return true;
 }
 
 ITEM *lista_remover(LISTA *lista, int chave){
     if(lista == NULL) exit(1);
+
+    ITEM *itemTempCabeca = item_criar(NULL, chave);
+    lista->noCabeca->pontItem = itemTempCabeca;
+    NO *pontNoBusca = lista->noCabeca->noSeguinte;
+
+    while(item_getChave(pontNoBusca) != chave){
+        pontNoBusca = pontNoBusca->noSeguinte;
+    }
+
+    if(pontNoBusca == lista->noCabeca){
+        item_apagar(&(lista->noCabeca->pontItem));
+        lista->noCabeca->pontItem = NULL;
+        
+        printf("Chave não encontrada, retornando NULL\n");
+        return NULL;
+    }
+    
+
+
+
 
     NO *pontNo = lista->inicio;
     while(pontNo != NULL){
