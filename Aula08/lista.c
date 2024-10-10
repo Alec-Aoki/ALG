@@ -41,6 +41,13 @@ LISTA *lista_criar(bool ordenacao){
     if(lista == NULL) exit(1);
 
     NO *noCabeca = no_criar(NULL, NULL, NULL);
+    noCabeca->noAnterior = noCabeca;
+    noCabeca->noSeguinte = noCabeca;
+    
+    /* Verificar se
+        NO *noCabeca = no_criar(noCabeca, noCabeca, NULL);
+    funcionaria
+    */
 
     lista->cabeca = noCabeca;
     lista->tamanho = 0;
