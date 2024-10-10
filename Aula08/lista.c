@@ -49,7 +49,7 @@ LISTA *lista_criar(bool ordenacao){
     funcionaria
     */
 
-    lista->cabeca = noCabeca;
+    lista->noCabeca = noCabeca;
     lista->tamanho = 0;
     lista->ordenada = ordenacao;
 
