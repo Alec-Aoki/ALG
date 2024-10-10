@@ -13,7 +13,7 @@
 	int lista_tamanho(LISTA *lista);
 	bool lista_vazia(LISTA *lista);
 	bool lista_cheia(LISTA *lista);
-	void lista_imprimir(LISTA *lista);
+	void lista_imprimir(LISTA *lista, bool comQuebraDeLinha);
 
 	/*Funções adicionais*/
 	bool lista_inverter(LISTA *lista);
