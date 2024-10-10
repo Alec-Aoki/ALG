@@ -25,6 +25,15 @@ bool lista_inserir_fim(LISTA *lista, ITEM *item);
 ITEM *lista_busca_sequencial(LISTA *lista, int chave);
 ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
+NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item){
+    NO *noNovo = (NO *)malloc(sizeof(NO));
+    if(noNovo == NULL) exit(1);
+
+    noNovo->pontItem = item;
+    noNovo->noAnterior = noAnterior;
+    noNovo->noSeguinte = noSeguinte;
+}
+
 LISTA *lista_criar(bool ordenacao){
     LISTA *lista = (LISTA *)malloc(sizeof(LISTA));
     if(lista == NULL) exit(1);
@@ -289,19 +298,9 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
 bool lista_inserir_fim(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
 
-    NO *noNovo = (NO *)malloc(sizeof(NO));
-    if(noNovo == NULL) exit(1);
-
-    noNovo->pontItem = item;
+    NO *noNovo = no_criar(lista->cabeca->noAnterior, lista->cabeca, item);
+    
+    lista->cabeca->noAnterior = noNovo;
 
     return true;
-}
-
-NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item){
-    NO *noNovo = (NO *)malloc(sizeof(NO));
-    if(noNovo == NULL) exit(1);
-
-    noNovo->pontItem = item;
-    noNovo->noAnterior = noAnterior;
-    noNovo->noSeguinte = noSeguinte;
 }
