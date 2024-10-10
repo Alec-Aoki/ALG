@@ -48,15 +48,24 @@ LISTA *lista_criar(bool ordenacao){
 }
 
 bool lista_inserir(LISTA *lista, ITEM *item){
-    if(lista == NULL) exit(1);
+    if(lista == NULL) return false;
     if(lista_cheia(lista)) return false;
 
     if(lista->ordenada){
-        lista_inserir_posicao(lista, item);
+        return lista_inserir_posicao(lista, item);
     }
     else{
-        lista_inserir_fim(lista, item);
+        return lista_inserir_fim(lista, item);
     }
+}
+
+bool lista_inserir_fim(LISTA *lista, ITEM *item){
+    if(lista == NULL) exit(1);
+
+    NO *noNovo = no_criar(lista->cabeca->noAnterior, lista->cabeca, item);
+
+    lista->cabeca->noAnterior->noSeguinte = noNovo;
+    lista->cabeca->noAnterior = noNovo;
 
     lista->tamanho++;
 
@@ -291,16 +300,6 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
     lista->fim->noSeguinte = noNovo;
     lista->fim = noNovo;
     lista->tamanho++;
-
-    return true;
-}
-
-bool lista_inserir_fim(LISTA *lista, ITEM *item){
-    if(lista == NULL) exit(1);
-
-    NO *noNovo = no_criar(lista->cabeca->noAnterior, lista->cabeca, item);
-    
-    lista->cabeca->noAnterior = noNovo;
 
     return true;
 }
