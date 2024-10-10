@@ -85,35 +85,24 @@ bool lista_inserir_posicao(LISTA *lista, ITEM *item){
     if(lista == NULL) exit(1);
 
     int chaveItem = item_getChave(item);
-    NO *pontNoAux = lista->noCabeca->noSeguinte;
+    NO *pontNoBusca = lista->noCabeca->noSeguinte;
 
     for(int i=0; i<lista->tamanho; i++){
-        if(chaveItem < item_getChave(pontNo->pontItem)){
-            if(pontNo == lista->inicio){
-                noNovo->noSeguinte = lista->inicio;
-                lista->inicio = noNovo;
-            }
-            else{
-                noNovo->noSeguinte = pontNo;
-                pontNo->noAnterior->noSeguinte = noNovo;
-            }
+        if(chaveItem < item_getChave(pontNoBusca->pontItem)){
+           NO *noNovo = no_criar(pontNoBusca->noAnterior, pontNoBusca, item);
 
-            lista->tamanho++;
-            
-            return true;
+           pontNoBusca->noAnterior->noSeguinte = noNovo;
+           pontNoBusca->noAnterior = noNovo;
+
+           lista->tamanho++;
+           return true;
         }
         else{
-            pontNo = pontNo->noSeguinte;
-            if(pontNo == NULL) break;
+            pontNoBusca = pontNoBusca->noSeguinte;
         }
     }
 
-    /*O item não pertence nem ao início nem ao meio da lista, logo inserimos no fim*/
-    lista->fim->noSeguinte = noNovo;
-    lista->fim = noNovo;
-    lista->tamanho++;
-
-    return true;
+    return lista_inserir_fim(lista, item);
 }
 
 ITEM *lista_remover(LISTA *lista, int chave){
