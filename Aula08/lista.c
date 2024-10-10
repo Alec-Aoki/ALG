@@ -32,6 +32,8 @@ NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item){
     noNovo->pontItem = item;
     noNovo->noAnterior = noAnterior;
     noNovo->noSeguinte = noSeguinte;
+
+    return noNovo;
 }
 
 LISTA *lista_criar(bool ordenacao){
@@ -48,7 +50,7 @@ LISTA *lista_criar(bool ordenacao){
 }
 
 bool lista_inserir(LISTA *lista, ITEM *item){
-    if(lista == NULL) return false;
+    if(lista == NULL) exit(1);
     if(lista_cheia(lista)) return false;
 
     if(lista->ordenada){
