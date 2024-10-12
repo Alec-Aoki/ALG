@@ -14,4 +14,8 @@
 	bool lista_vazia(LISTA *lista);
 	bool lista_cheia(LISTA *lista);
 	void lista_imprimir(LISTA *lista, bool comQuebraDeLinha);
+
+	/*funções extras*/
+	ITEM *lista_remover_inicio(LISTA *lista);
+	ITEM *lista_remover_fim(LISTA *lista);
 #endif

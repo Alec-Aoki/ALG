@@ -22,8 +22,6 @@ struct lista_{
 NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item);
 bool lista_inserir_posicao(LISTA *lista, ITEM *item);
 bool lista_inserir_fim(LISTA *lista, ITEM *item);
-ITEM *lista_busca_sequencial(LISTA *lista, int chave);
-ITEM *lista_busca_ordenada(LISTA *lista, int chave);
 
 NO *no_criar(NO *noAnterior, NO *noSeguinte, ITEM *item){
     NO *noNovo = (NO *)malloc(sizeof(NO));
@@ -141,6 +139,22 @@ ITEM *lista_remover(LISTA *lista, int chave){
     lista->tamanho--;
 
     return itemRemovido;
+}
+
+ITEM *lista_remover_inicio(LISTA *lista){
+    if(lista == NULL) exit(1);
+    if(lista_vazia(lista)) return NULL;
+
+    int chave = item_getChave(lista->noCabeca->noSeguinte->pontItem);
+    return lista_remover(lista, chave);
+}
+
+ITEM *lista_remover_fim(LISTA *lista){
+    if(lista == NULL) exit(1);
+    if(lista_vazia(lista)) return NULL;
+
+    int chave = item_getChave(lista->noCabeca->noAnterior->pontItem);
+    return lista_remover(lista, chave);
 }
 
 bool lista_apagar(LISTA **lista){
