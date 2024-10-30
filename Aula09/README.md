@@ -14,6 +14,8 @@
   - O elemento no topo da árvore é chamado de *raiz*;
   - $ T = \{ T_1, T_2, T_3, ..., T_v \} $, com $r$ a raíz da árvore e $T_v$ uma subárvore com raíz em $v$;
   - Definição recursiva;
+  - Seus nós não podem ser direcionados;
+  - Não pode conter ciclos;
 - Modos de representação (gráficas):
   - Conjuntos aninhados;
     - Diagrama de Venn/representação de conjuntos;
