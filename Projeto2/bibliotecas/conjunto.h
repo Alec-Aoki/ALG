@@ -1,11 +1,11 @@
 #ifndef CONJUNTO_H
     #define CONJUNTO_H
 
-    void Conjunto_Pertence_0(int* conjunto_A, int tamanho_A, int elemento);
-    void Conjunto_Uniao_0(int* conjunto_A, int tamanho_A, int* conjunto_B, int tamanho_B);
-    void Conjunto_Intersecao_0(int* conjunto_A, int tamanho_A, int* conjunto_B, int tamanho_B);
-    void Conjunto_Pertence_1(int* conjunto_A, int tamanho_A, int elemento);
-    void Conjunto_Uniao_1(int* conjunto_A, int tamanho_A, int* conjunto_B, int tamanho_B);
-    void Conjunto_Intersecao_1(int* conjunto_A, int tamanho_A, int* conjunto_B, int tamanho_B);
+    void conjunto_listaPertence(int* conjA, int tamConjA, int elemento);
+    void conjunto_listaUniao(int* conjA, int tamConjA, int* conjB, int tamConjB);
+    void conjunto_listaIntersec(int* conjA, int tamConjA, int* conjB, int tamConjB);
+    void conjunto_arvPertence(int* conjA, int tamConjA, int elemento);
+    void conjunto_arvUniao(int* conjA, int tamConjA, int* conjB, int tamConjB);
+    void conjunto_arvIntersec(int* conjA, int tamConjA, int* conjB, int tamConjB);
 
 #endif 
