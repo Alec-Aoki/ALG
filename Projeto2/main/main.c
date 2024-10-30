@@ -1,61 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "conjunto.h"
 
-int main() {
-    int TAD, tamanho_A, tamanho_B, operacao, elemento;
+#define LISTA 0
+#define ARVORE 1
+#define PERTENCE 1
+
+int main(void) {
+    int TAD, tamConjA, tamConjB, op, elemPertence;
     
-    // Leitura do tipo de TAD, tamanho do conjunto A e tamanho do conjunto B
-    scanf("%d %d %d", &TAD, &tamanho_A, &tamanho_B);
-    int conjunto_A[tamanho_A], conjunto_B[tamanho_B];
+    scanf("%d %d %d", &TAD, &tamConjA, &tamConjB);
+    int conjA[tamConjA], conjB[tamConjB]; //100% proibido mano
 
-    // Leitura dos elementos do conjunto A
-    for (int i = 0; i < tamanho_A; i++) {
-        scanf("%d", &conjunto_A[i]);   
+    /*Lendo os elementos*/
+    for(int i = 0; i < tamConjA; i++){
+        scanf("%d", &conjA[i]);   
     }
-    
-    // Leitura dos elementos do conjunto B
-    for (int i = 0; i < tamanho_B; i++) { 
-        scanf("%d", &conjunto_B[i]);
+    for(int i = 0; i < tamConjB; i++){ 
+        scanf("%d", &conjB[i]);
     }
 
-    // Leitura da operação a ser realizada (1: Pertencimento, 2: União, 3: Interseção)
-    scanf("%d", &operacao);
-    if (operacao == 1) {  // Se a operação for de pertencimento, lê o elemento
-        scanf("%d", &elemento);
+    scanf("%d", &op);
+    if(op == PERTENCE){
+        scanf("%d", &elemPertence);
     }
 
-    // Seleção do tipo de TAD para a operação: 0 para lista, 1 para árvore
-    if (TAD == 0) {
-        switch (operacao) {
+    if(TAD == LISTA){
+        switch(op){
             case 1:
-                Conjunto_Pertence_0(conjunto_A, tamanho_A, elemento);  // Verifica pertencimento usando lista
+                conjunto_listaPertence(conjA, tamConjA, elemPertence);
                 break;
             case 2:
-                Conjunto_Uniao_0(conjunto_A, tamanho_A, conjunto_B, tamanho_B);  // União de conjuntos usando lista
+                conjunto_listaUniao(conjA, tamConjA, conjB, tamConjB);
                 break;
             case 3:
-                Conjunto_Intersecao_0(conjunto_A, tamanho_A, conjunto_B, tamanho_B);  // Interseção de conjuntos usando lista
+                conjunto_listaIntersec(conjA, tamConjA, conjB, tamConjB);
                 break;
             default:
-                printf("Comando inválido!\n");  // Tratamento de erro para operação inválida
-                return 1;
+                printf("Comando inválido!\n");
+                return EXIT_FAILURE;
         }
 
-    } else if (TAD == 1) {
-        switch (operacao) {
+    }
+    else if(TAD == ARVORE){
+        switch(op){
             case 1:
-                Conjunto_Pertence_1(conjunto_A, tamanho_A, elemento);  // Verifica pertencimento usando árvore
+                conjunto_arvPertence(conjA, tamConjA, elemPertence);
                 break;
             case 2:
-                Conjunto_Uniao_1(conjunto_A, tamanho_A, conjunto_B, tamanho_B);  // União de conjuntos usando árvore
+                conjunto_arvUniao(conjA, tamConjA, conjB, tamConjB);
                 break;
             case 3:
-                Conjunto_Intersecao_1(conjunto_A, tamanho_A, conjunto_B, tamanho_B);  // Interseção de conjuntos usando árvore
+                conjunto_arvIntersec(conjA, tamConjA, conjB, tamConjB);
                 break;
             default:
-                printf("Comando inválido!\n");  // Tratamento de erro para operação inválida
-                return 1;
+                printf("Comando inválido!\n"); 
+                return EXIT_FAILURE;
         }
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
