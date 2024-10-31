@@ -18,7 +18,7 @@ CONJUNTO *conjunto_criar(int TAD){
     printf("TAD inválido\n");
     return NULL;
   }
-  
+
   CONJUNTO *conjunto = (CONJUNTO *) malloc(sizeof(CONJUNTO));
   if(conjunto == NULL){
     printf("Erro em conjunto_criar: conjunto == NULL\n");
@@ -37,4 +37,20 @@ CONJUNTO *conjunto_criar(int TAD){
   }
 
   return conjunto;
+}
+
+bool conjunto_apagar(CONJUNTO **conj){
+  if(*conj == NULL) return true;
+
+  if((*conj)->TAD == TAD_LISTA){
+    Lista_Apagar(&((*conj)->conjuntoLista));
+  }
+  else{
+    heapmax_apagar(&((*conj)->conjuntoHeap));
+  }
+
+  free(*conj);
+  *conj = NULL;
+
+  return true;
 }
