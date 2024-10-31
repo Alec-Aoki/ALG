@@ -9,7 +9,7 @@
   CONJUNTO *conjunto_criar(int TAD);
   bool conjunto_apagar(CONJUNTO **conj);
   bool conjunto_inserir(CONJUNTO *conj, int elemento);
-  int conjunto_remover(CONJUNTO *conj, int elemento);
+  int conjunto_remover(CONJUNTO *conj);
   void conjunto_imprimir(CONJUNTO *conj);
   bool conjunto_pertence(CONJUNTO *conj, int elemento);
   CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB);
