@@ -4,7 +4,7 @@
 
 #include "../heapmax.h"
 
-struct Heapmax_{
+struct heapmax_{
   int vet[TAM_MAX];
   int tamanho;
 };
