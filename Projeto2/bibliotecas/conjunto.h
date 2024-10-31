@@ -1,8 +1,8 @@
 #ifndef CONJUNTO_H
   #define CONJUNTO_H
 
-  #define LISTA 0
-  #define ARVORE 1
+  #define TAD_LISTA 0
+  #define TAD_ARVORE 1
 
   typedef struct conjunto_ CONJUNTO;
 
