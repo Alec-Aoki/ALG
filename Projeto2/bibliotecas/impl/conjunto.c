@@ -14,16 +14,10 @@ struct conjunto_{
 };
 
 CONJUNTO *conjunto_criar(int TAD){
-  if((TAD != TAD_LISTA) || (TAD != TAD_ARVORE)){
-    printf("TAD inválido\n");
-    return NULL;
-  }
+  if((TAD != TAD_LISTA) || (TAD != TAD_ARVORE)) return NULL;
 
   CONJUNTO *conjunto = (CONJUNTO *) malloc(sizeof(CONJUNTO));
-  if(conjunto == NULL){
-    printf("Erro em conjunto_criar: conjunto == NULL\n");
-    return NULL;
-  }
+  if(conjunto == NULL) return NULL;
 
   conjunto->TAD = TAD;
   conjunto->tamanho = 0;
@@ -52,5 +46,20 @@ bool conjunto_apagar(CONJUNTO **conj){
   free(*conj);
   *conj = NULL;
 
+  return true;
+}
+
+bool conjunto_inserir(CONJUNTO *conj, int elemento){
+  if(conj == NULL) return false;
+
+  if(conj->TAD == TAD_LISTA){
+    Lista_Inserir(conj->conjuntoLista, elemento);
+  }
+  else{
+    heapmax_inserir(conj->conjuntoHeap, elemento);
+  }
+
+  conj->tamanho++;
+  
   return true;
 }
