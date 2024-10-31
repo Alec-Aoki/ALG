@@ -45,7 +45,6 @@ bool conjunto_apagar(CONJUNTO **conj){
 
   free(*conj);
   *conj = NULL;
-
   return true;
 }
 
@@ -60,6 +59,20 @@ bool conjunto_inserir(CONJUNTO *conj, int elemento){
   }
 
   conj->tamanho++;
-  
   return true;
+}
+
+int conjunto_remover(CONJUNTO *conj){
+  if(conj == NULL) return ERRO;
+
+  int elementoRemovido;
+  if(conj->TAD == TAD_LISTA){
+    elementoRemovido =  Lista_Remover(conj->conjuntoLista);
+  }
+  else{
+    elementoRemovido = heapmax_remover(conj->conjuntoHeap);
+  }
+
+  conj->tamanho--;
+  return elementoRemovido;
 }
