@@ -4,7 +4,7 @@
   #define TAM_MAX 100000
   #define ERRO 1000010
 
-  typedef struct hseapmax_ HEAPMAX;
+  typedef struct heapmax_ HEAPMAX;
 
   HEAPMAX *heapmax_criar(void);
   bool heapmax_inserir(HEAPMAX *heap, int elemento);
