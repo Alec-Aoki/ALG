@@ -76,3 +76,16 @@ int conjunto_remover(CONJUNTO *conj){
   conj->tamanho--;
   return elementoRemovido;
 }
+
+void conjunto_imprimir(CONJUNTO *conj){
+  if(conj == NULL) return;
+
+  if(conj->TAD == TAD_LISTA){
+    Lista_Imprimir(conj->conjuntoLista);
+  }
+  else{
+    heapmax_imprimir(conj->conjuntoHeap);
+  }
+
+  return;
+}
