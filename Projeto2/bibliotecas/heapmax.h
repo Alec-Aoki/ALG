@@ -8,7 +8,7 @@
 
   HEAPMAX *heapmax_criar(void);
   bool heapmax_inserir(HEAPMAX *heap, int elemento);
-  //int heapmax_remover(HEAPMAX *heap, int posicao);
+  int heapmax_remover(HEAPMAX *heap);
   void heapmax_rearranjar(HEAPMAX *heap, int i, int tamHeap);
   void heapSort(HEAPMAX *heap, int tamHeap);
   bool heapmax_cheia(HEAPMAX *heap);

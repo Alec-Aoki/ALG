@@ -45,8 +45,8 @@ bool heapmax_inserir(HEAPMAX *heap, int elemento){
   return true;
 }
 
-/*
-int heapmax_remover(HEAPMAX *heap, int posicao){
+
+int heapmax_remover(HEAPMAX *heap){
   if(heap == NULL){
     printf("Erro em heapmax_remover: heap == NULL\n");
     return ERRO;
@@ -56,13 +56,13 @@ int heapmax_remover(HEAPMAX *heap, int posicao){
     return ERRO;
   }
 
-  int elementoRemovido = heap->vet[posicao];
-  heap->vet[posicao] = ERRO;
-  heapmax_rearranjar(heap, 0, heap->tamanho);
+  int elementoRemovido = heap->vet[heap->tamanho];
+  heap->vet[heap->tamanho] = ERRO;
+  heap->tamanho--;
 
   return elementoRemovido;
 }
-*/
+
 
 void heapmax_rearranjar(HEAPMAX *heap, int i, int tamHeap){
   if(heap == NULL){
