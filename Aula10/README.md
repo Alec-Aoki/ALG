@@ -6,15 +6,33 @@
 ```
                           1
                   2             3
-                4   7         9   
+                4             9   
 ```
 - Vantagens:
   - Encadeada (memória);
-  - Ordenada (busca binária).
+  - Ordenada (busca binária);
+    - Complexidade: $O(h)$, $h$ a altura da árvore.
 
-## Árvores Estritamente Binárias / Próprias
+## Árvores Estritamente Binárias/Próprias
 
 - Seus nós tem somente 0 ou 2 filhos, sempre;
   - Não há nós com 1 filho;
 - Os nós interiores (não-folhas) têm sempre 2 filhos;
 - Os nó folha têm sempre 0 filhos;
+- **Não garante a menor altura possível**.
+```
+                          1
+                  2             3
+              4       7
+            9   10
+```
+
+## Árvores Binárias Completas Cheias (ABCC)
+
+- Árvore Estritamente Binária com todos os nós folhas no mesmo nível;
+- **Garante a menor altura**.
+```
+                          1
+                  2             3
+                4   7         9   10 
+```
