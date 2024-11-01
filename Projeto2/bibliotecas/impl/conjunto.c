@@ -70,7 +70,7 @@ int conjunto_remover(CONJUNTO *conj){
     elementoRemovido =  Lista_Remover(conj->conjuntoLista);
   }
   else{
-    elementoRemovido = abb_remover(conj->conjuntoABB, );
+    elementoRemovido = abb_remover(conj->conjuntoABB);
   }
 
   conj->tamanho--;
