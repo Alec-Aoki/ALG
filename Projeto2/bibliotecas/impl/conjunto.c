@@ -89,3 +89,58 @@ void conjunto_imprimir(CONJUNTO *conj){
 
   return;
 }
+
+bool conjunto_pertence(CONJUNTO *conj, int elemento){
+  if(conj == NULL) return false;
+
+  if(conj->TAD == TAD_LISTA){
+    return busca_binaria(conj->conjuntoLista, elemento);
+  }
+  else{
+    if (elemento == buscaBinaria(conj->conjuntoHeap, 0, conj->tamanho-1, elemento)) return true;
+  }
+
+  return false;
+}
+
+CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
+  if((conjA == NULL) || (conjB == NULL)) return NULL;
+
+  CONJUNTO *conjUniao = conjunto_criar(conjA->TAD);
+
+  if(conjUniao->TAD == TAD_LISTA){
+    for(int i = 0; i < conjA->tamanho; i++){
+      int elemento = Lista_Remover(conjA->conjuntoLista);
+      conjunto_inserir(conjUniao, elemento);
+      conjUniao->tamanho++;
+    }
+
+    for(int i = 0; i < conjB->tamanho; i++){
+      int elemento = Lista_Remover(conjA->conjuntoLista);
+
+      if(!busca_binaria(conjUniao->conjuntoLista, elemento)){
+        conjunto_inserir(conjUniao, elemento);
+        conjUniao->tamanho++;
+      }
+    }
+  }
+
+  if(conjUniao->TAD == TAD_ARVORE){
+    for(int i = 0; i < conjA->tamanho; i++){
+      int elemento = heapmax_remover(conjA->conjuntoLista);
+      conjunto_inserir(conjUniao, elemento);
+      conjUniao->tamanho++;
+    }
+    
+    for(int i = 0; i < conjB->tamanho; i++){
+      int elemento = heapmax_remover(conjA->conjuntoLista);
+
+      if(buscaBinaria(conjUniao->conjuntoHeap, 0, conjUniao->tamanho - 1, elemento) == ERRO){
+        conjunto_inserir(conjUniao, elemento);
+        conjUniao->tamanho++;
+      }
+    }
+  }
+
+  return conjUniao;
+}
