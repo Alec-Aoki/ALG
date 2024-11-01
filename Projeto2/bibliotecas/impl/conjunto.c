@@ -144,3 +144,49 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
 
   return conjUniao;
 }
+
+CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
+  if((conjA == NULL) || (conjB == NULL)) return NULL;
+
+  CONJUNTO *conjIntersec = conjunto_criar(conjA->TAD);
+
+  if(conjIntersec->TAD == TAD_LISTA){
+    for(int i = 0; i < conjA->tamanho; i++){
+      int elemento = Lista_Remover(conjA->conjuntoLista);
+
+      if(!busca_binaria(conjB->conjuntoLista, elemento)){
+        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+        conjIntersec->tamanho++;
+      }
+    }
+    for(int i = 0; i < conjB->tamanho; i++){
+      int elemento = Lista_Remover(conjB->conjuntoLista);
+
+      if(!busca_binaria(conjA->conjuntoLista, elemento)){
+        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+        conjIntersec->tamanho++;
+      }
+    }
+  }
+
+  if(conjIntersec->TAD == TAD_ARVORE){
+    for(int i = 0; i < conjA->tamanho; i++){
+      int elemento = heapmax_remover(conjA->conjuntoLista);
+
+      if(buscaBinaria(conjB->conjuntoLista, 0, conjB->tamanho, elemento) == ERRO){
+        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+        conjIntersec->tamanho++;
+      }
+    }
+    for(int i = 0; i < conjB->tamanho; i++){
+      int elemento = heapmax_remover(conjB->conjuntoLista);
+
+      if(buscaBinaria(conjA->conjuntoLista, 0, conjA->tamanho, elemento) == ERRO){
+        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+        conjIntersec->tamanho++;
+      }
+    } 
+  }
+
+  return conjIntersec;
+}
