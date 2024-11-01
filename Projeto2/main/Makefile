@@ -1,4 +1,4 @@
-all: clean compile
+all: compile
 	gcc heapmax.o lista.o conjunto. main.o -o main -std=c99 -Wall
 
 compile:
