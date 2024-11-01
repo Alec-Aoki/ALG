@@ -116,7 +116,7 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
     }
 
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = Lista_Remover(conjA->conjuntoLista);
+      int elemento = Lista_Remover(conjB->conjuntoLista);
 
       if(!busca_binaria(conjUniao->conjuntoLista, elemento)){
         conjunto_inserir(conjUniao, elemento);
@@ -133,7 +133,7 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
     }
     
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoHeap);
+      int elemento = heapmax_remover(conjB->conjuntoHeap);
 
       if(buscaBinaria(conjUniao->conjuntoHeap, 0, conjUniao->tamanho - 1, elemento) == ERRO){
         conjunto_inserir(conjUniao, elemento);
