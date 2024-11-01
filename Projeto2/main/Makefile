@@ -1,5 +1,5 @@
 all: compile
-	gcc heapmax.o lista.o conjunto. main.o -o main -std=c99 -Wall
+	gcc heapmax.o lista.o conjunto.o main.o -o main -std=c99 -Wall
 
 compile:
 	gcc -c ../bibliotecas/impl/heapmax.c -o heapmax.o
