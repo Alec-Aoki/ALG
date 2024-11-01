@@ -3,13 +3,13 @@
 #include <stdbool.h>
 
 #include "../lista.h"
-#include "../heapmax.h"
+#include "../ABB.h"
 #include "../conjunto.h"
 
 struct conjunto_{
   int TAD;
   LISTA *conjuntoLista;
-  HEAPMAX *conjuntoHeap;
+  ABB *conjuntoABB;
   int tamanho;
 };
 
@@ -23,10 +23,10 @@ CONJUNTO *conjunto_criar(int TAD){
   conjunto->tamanho = 0;
   if(TAD == TAD_LISTA){
     conjunto->conjuntoLista = Lista_Criar();
-    conjunto->conjuntoHeap = NULL;
+    conjunto->conjuntoABB = NULL;
   }
   else if(TAD == TAD_ARVORE){
-    conjunto->conjuntoHeap = heapmax_criar();
+    conjunto->conjuntoABB = abb_criar();
     conjunto->conjuntoLista = NULL;
   }
 
@@ -40,7 +40,7 @@ bool conjunto_apagar(CONJUNTO **conj){
     Lista_Apagar(&((*conj)->conjuntoLista));
   }
   else{
-    heapmax_apagar(&((*conj)->conjuntoHeap));
+    abb_apagar(&((*conj)->conjuntoABB));
   }
 
   free(*conj);
@@ -55,7 +55,7 @@ bool conjunto_inserir(CONJUNTO *conj, int elemento){
     Lista_Inserir(conj->conjuntoLista, elemento);
   }
   else{
-    heapmax_inserir(conj->conjuntoHeap, elemento);
+    abb_inserir(conj->conjuntoABB, elemento);
   }
 
   conj->tamanho++;
@@ -70,7 +70,7 @@ int conjunto_remover(CONJUNTO *conj){
     elementoRemovido =  Lista_Remover(conj->conjuntoLista);
   }
   else{
-    elementoRemovido = heapmax_remover(conj->conjuntoHeap);
+    elementoRemovido = abb_remover(conj->conjuntoABB, );
   }
 
   conj->tamanho--;
@@ -84,7 +84,7 @@ void conjunto_imprimir(CONJUNTO *conj){
     Lista_Imprimir(conj->conjuntoLista);
   }
   else{
-    heapmax_imprimir(conj->conjuntoHeap);
+    heapmax_imprimir(conj->conjuntoABB);
   }
 
   return;
@@ -97,8 +97,8 @@ bool conjunto_pertence(CONJUNTO *conj, int elemento){
     return busca_binaria(conj->conjuntoLista, elemento);
   }
   else{
-    heapSort(conj->conjuntoHeap, conj->tamanho);
-    if(elemento == buscaBinaria(conj->conjuntoHeap, 0, conj->tamanho-1, elemento)) return true;
+    heapSort(conj->conjuntoABB, conj->tamanho);
+    if(elemento == buscaBinaria(conj->conjuntoABB, 0, conj->tamanho-1, elemento)) return true;
   }
 
   return false;
@@ -128,15 +128,15 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
 
   if(conjUniao->TAD == TAD_ARVORE){
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoHeap);
+      int elemento = heapmax_remover(conjA->conjuntoABB);
       conjunto_inserir(conjUniao, elemento);
       conjUniao->tamanho++;
     }
     
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjB->conjuntoHeap);
+      int elemento = heapmax_remover(conjB->conjuntoABB);
 
-      if(buscaBinaria(conjUniao->conjuntoHeap, 0, conjUniao->tamanho - 1, elemento) == ERRO){
+      if(buscaBinaria(conjUniao->conjuntoABB, 0, conjUniao->tamanho - 1, elemento) == ERRO){
         conjunto_inserir(conjUniao, elemento);
         conjUniao->tamanho++;
       }
@@ -174,22 +174,22 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
   }
 
   if(conjIntersec->TAD == TAD_ARVORE){
-    heapSort(conjA->conjuntoHeap, conjA->tamanho);
-    heapSort(conjB->conjuntoHeap, conjB->tamanho);
+    heapSort(conjA->conjuntoABB, conjA->tamanho);
+    heapSort(conjB->conjuntoABB, conjB->tamanho);
 
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoHeap);
+      int elemento = heapmax_remover(conjA->conjuntoABB);
 
-      if(buscaBinaria(conjB->conjuntoHeap, 0, conjB->tamanho - 1, elemento) == elemento){
-        heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
+      if(buscaBinaria(conjB->conjuntoABB, 0, conjB->tamanho - 1, elemento) == elemento){
+        heapmax_inserir(conjIntersec->conjuntoABB, elemento);
         conjIntersec->tamanho++;
       }
     }
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjB->conjuntoHeap);
+      int elemento = heapmax_remover(conjB->conjuntoABB);
 
-      if(buscaBinaria(conjA->conjuntoHeap, 0, conjA->tamanho - 1, elemento) == elemento){
-        heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
+      if(buscaBinaria(conjA->conjuntoABB, 0, conjA->tamanho - 1, elemento) == elemento){
+        heapmax_inserir(conjIntersec->conjuntoABB, elemento);
         conjIntersec->tamanho++;
       }
     } 

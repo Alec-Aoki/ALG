@@ -70,7 +70,7 @@ bool abb_inserir(ABB *arvore, int elemento){
   return true;
 }
 
-int abb_remover(ABB *arvore, int chave){
+int abb_remover(ABB *arvore){
   if(arvore == NULL){
     printf("Erro em abb_remover: arvore == NULL\n");
     return ERRO;
@@ -80,6 +80,12 @@ int abb_remover(ABB *arvore, int chave){
     return ERRO;
   }
 
+  NO *raizVelha = arvore->raiz;
+  int elemRemovido = raizVelha->chave;
+
+  arvore->raiz = removeRaizABB(raizVelha);
+
+/* REMOVER ELEMENTO ESPECÍFICO
   if(chave == arvore->raiz->chave){
     NO *raizVelha = arvore->raiz;
     int elemRemovido = raizVelha->chave;
@@ -116,6 +122,7 @@ int abb_remover(ABB *arvore, int chave){
   else{
     noPai->noDir = removeRaizABB(noPai->noDir);
   }
+*/
 
   arvore->tamanho--;
   return elemRemovido;
