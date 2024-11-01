@@ -174,18 +174,18 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
 
   if(conjIntersec->TAD == TAD_ARVORE){
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoLista);
+      int elemento = heapmax_remover(conjA->conjuntoHeap);
 
-      if(buscaBinaria(conjB->conjuntoLista, 0, conjB->tamanho, elemento) == ERRO){
-        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+      if(buscaBinaria(conjB->conjuntoHeap, 0, conjB->tamanho, elemento) == ERRO){
+        heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
         conjIntersec->tamanho++;
       }
     }
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjB->conjuntoLista);
+      int elemento = heapmax_remover(conjB->conjuntoHeap);
 
-      if(buscaBinaria(conjA->conjuntoLista, 0, conjA->tamanho, elemento) == ERRO){
-        Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+      if(buscaBinaria(conjA->conjuntoHeap, 0, conjA->tamanho, elemento) == ERRO){
+        heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
         conjIntersec->tamanho++;
       }
     } 
