@@ -97,7 +97,8 @@ bool conjunto_pertence(CONJUNTO *conj, int elemento){
     return busca_binaria(conj->conjuntoLista, elemento);
   }
   else{
-    if (elemento == buscaBinaria(conj->conjuntoHeap, 0, conj->tamanho-1, elemento)) return true;
+    heapSort(conj->conjuntoHeap, conj->tamanho);
+    if(elemento == buscaBinaria(conj->conjuntoHeap, 0, conj->tamanho-1, elemento)) return true;
   }
 
   return false;
@@ -173,6 +174,9 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
   }
 
   if(conjIntersec->TAD == TAD_ARVORE){
+    heapSort(conjA->conjuntoHeap, conjA->tamanho);
+    heapSort(conjB->conjuntoHeap, conjB->tamanho);
+
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = heapmax_remover(conjA->conjuntoHeap);
 
