@@ -14,7 +14,7 @@ struct conjunto_{
 };
 
 CONJUNTO *conjunto_criar(int TAD){
-  if((TAD != TAD_LISTA) || (TAD != TAD_ARVORE)) return NULL;
+  if((TAD != TAD_LISTA) && (TAD != TAD_ARVORE)) return NULL;
 
   CONJUNTO *conjunto = (CONJUNTO *) malloc(sizeof(CONJUNTO));
   if(conjunto == NULL) return NULL;
@@ -127,13 +127,13 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
 
   if(conjUniao->TAD == TAD_ARVORE){
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoLista);
+      int elemento = heapmax_remover(conjA->conjuntoHeap);
       conjunto_inserir(conjUniao, elemento);
       conjUniao->tamanho++;
     }
     
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoLista);
+      int elemento = heapmax_remover(conjA->conjuntoHeap);
 
       if(buscaBinaria(conjUniao->conjuntoHeap, 0, conjUniao->tamanho - 1, elemento) == ERRO){
         conjunto_inserir(conjUniao, elemento);
@@ -141,6 +141,9 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
       }
     }
   }
+
+  conjunto_apagar(&conjA);
+  conjunto_apagar(&conjB);
 
   return conjUniao;
 }
@@ -187,6 +190,9 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
       }
     } 
   }
+
+  conjunto_apagar(&conjA);
+  conjunto_apagar(&conjB);
 
   return conjIntersec;
 }
