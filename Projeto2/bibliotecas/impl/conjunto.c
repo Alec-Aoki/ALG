@@ -157,7 +157,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = Lista_Remover(conjA->conjuntoLista);
 
-      if(!busca_binaria(conjB->conjuntoLista, elemento)){
+      if(busca_binaria(conjB->conjuntoLista, elemento)){
         Lista_Inserir(conjIntersec->conjuntoLista, elemento);
         conjIntersec->tamanho++;
       }
@@ -165,7 +165,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
     for(int i = 0; i < conjB->tamanho; i++){
       int elemento = Lista_Remover(conjB->conjuntoLista);
 
-      if(!busca_binaria(conjA->conjuntoLista, elemento)){
+      if(busca_binaria(conjA->conjuntoLista, elemento)){
         Lista_Inserir(conjIntersec->conjuntoLista, elemento);
         conjIntersec->tamanho++;
       }
@@ -176,7 +176,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = heapmax_remover(conjA->conjuntoHeap);
 
-      if(buscaBinaria(conjB->conjuntoHeap, 0, conjB->tamanho, elemento) == ERRO){
+      if(buscaBinaria(conjB->conjuntoHeap, 0, conjB->tamanho - 1, elemento) == elemento){
         heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
         conjIntersec->tamanho++;
       }
@@ -184,7 +184,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
     for(int i = 0; i < conjB->tamanho; i++){
       int elemento = heapmax_remover(conjB->conjuntoHeap);
 
-      if(buscaBinaria(conjA->conjuntoHeap, 0, conjA->tamanho, elemento) == ERRO){
+      if(buscaBinaria(conjA->conjuntoHeap, 0, conjA->tamanho - 1, elemento) == elemento){
         heapmax_inserir(conjIntersec->conjuntoHeap, elemento);
         conjIntersec->tamanho++;
       }
