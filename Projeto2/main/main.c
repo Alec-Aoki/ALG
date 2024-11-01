@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "conjunto.h"
+
+#include "../bibliotecas/conjunto.h"
 
 void print_separator() {
     printf("\n====================================\n");
