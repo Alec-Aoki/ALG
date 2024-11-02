@@ -58,3 +58,26 @@ int lista_remover(LISTA *lista){
 
   return elemRemovido;
 }
+
+void lista_imprimir(LISTA *lista){
+  if(lista == NULL){
+    printf("Erro em lista_imprimir: lista == NULL\n");
+    return;
+  }
+
+  for(int i = 0; i < lista->tamanho; i++){
+    printf("%d ", lista->vet[i]);
+  }
+  printf("\n");
+
+  return;
+}
+
+int lista_busca(LISTA *lista, int chave){
+  if(lista == NULL){
+    printf("Erro em lista_busca: lista == NULL\n");
+    return ERRO;
+  }
+
+  return buscaBinaria(lista->vet, 0, lista->tamanho - 1, chave);
+}
