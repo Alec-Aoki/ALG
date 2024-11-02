@@ -2,12 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "ABB.h"
-
-#define ERRO -1
-#define NA 0
-#define ESQ 1
-#define DIR 2
+#include "../ABB.h"
 
 typedef struct no_ NO;
 

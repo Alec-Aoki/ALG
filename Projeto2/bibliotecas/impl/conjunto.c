@@ -73,6 +73,8 @@ int conjunto_remover(CONJUNTO *conj){
     elementoRemovido = abb_remover(conj->conjuntoABB);
   }
 
+  if(elementoRemovido == ERRO) return ERRO;
+
   conj->tamanho--;
   return elementoRemovido;
 }
@@ -84,7 +86,7 @@ void conjunto_imprimir(CONJUNTO *conj){
     Lista_Imprimir(conj->conjuntoLista);
   }
   else{
-    heapmax_imprimir(conj->conjuntoABB);
+    abb_imprimir(conj->conjuntoABB, true);
   }
 
   return;
@@ -97,8 +99,7 @@ bool conjunto_pertence(CONJUNTO *conj, int elemento){
     return busca_binaria(conj->conjuntoLista, elemento);
   }
   else{
-    heapSort(conj->conjuntoABB, conj->tamanho);
-    if(elemento == buscaBinaria(conj->conjuntoABB, 0, conj->tamanho-1, elemento)) return true;
+    if(elemento == abb_busca(conj->conjuntoABB, elemento)) return true;
   }
 
   return false;
@@ -112,7 +113,8 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
   if(conjUniao->TAD == TAD_LISTA){
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = Lista_Remover(conjA->conjuntoLista);
-      conjunto_inserir(conjUniao, elemento);
+      Lista_Inserir(conjUniao->conjuntoLista, elemento);
+
       conjUniao->tamanho++;
     }
 
@@ -120,7 +122,8 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
       int elemento = Lista_Remover(conjB->conjuntoLista);
 
       if(!busca_binaria(conjUniao->conjuntoLista, elemento)){
-        conjunto_inserir(conjUniao, elemento);
+        Lista_Inserir(conjUniao->conjuntoLista, elemento);
+
         conjUniao->tamanho++;
       }
     }
@@ -128,16 +131,18 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
 
   if(conjUniao->TAD == TAD_ARVORE){
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoABB);
-      conjunto_inserir(conjUniao, elemento);
+      int elemento = abb_remover(conjA->conjuntoABB);
+      abb_inserir(conjUniao->conjuntoABB, elemento);
+
       conjUniao->tamanho++;
     }
     
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjB->conjuntoABB);
+      int elemento = abb_remover(conjB->conjuntoABB);
 
-      if(buscaBinaria(conjUniao->conjuntoABB, 0, conjUniao->tamanho - 1, elemento) == ERRO){
-        conjunto_inserir(conjUniao, elemento);
+      if(abb_busca(conjUniao->conjuntoABB, elemento) == ERRO){
+        abb_inserir(conjUniao->conjuntoABB, elemento);
+        
         conjUniao->tamanho++;
       }
     }
@@ -160,6 +165,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
 
       if(busca_binaria(conjB->conjuntoLista, elemento)){
         Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+
         conjIntersec->tamanho++;
       }
     }
@@ -168,28 +174,28 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
 
       if(busca_binaria(conjA->conjuntoLista, elemento)){
         Lista_Inserir(conjIntersec->conjuntoLista, elemento);
+
         conjIntersec->tamanho++;
       }
     }
   }
 
   if(conjIntersec->TAD == TAD_ARVORE){
-    heapSort(conjA->conjuntoABB, conjA->tamanho);
-    heapSort(conjB->conjuntoABB, conjB->tamanho);
-
     for(int i = 0; i < conjA->tamanho; i++){
-      int elemento = heapmax_remover(conjA->conjuntoABB);
+      int elemento = abb_remover(conjA->conjuntoABB);
 
-      if(buscaBinaria(conjB->conjuntoABB, 0, conjB->tamanho - 1, elemento) == elemento){
-        heapmax_inserir(conjIntersec->conjuntoABB, elemento);
+      if(abb_busca(conjB->conjuntoABB, elemento) == elemento){
+        abb_inserir(conjIntersec->conjuntoABB, elemento);
+
         conjIntersec->tamanho++;
       }
     }
     for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = heapmax_remover(conjB->conjuntoABB);
+      int elemento = abb_remover(conjB->conjuntoABB);
 
-      if(buscaBinaria(conjA->conjuntoABB, 0, conjA->tamanho - 1, elemento) == elemento){
-        heapmax_inserir(conjIntersec->conjuntoABB, elemento);
+      if(abb_busca(conjA->conjuntoABB, elemento) == elemento){
+        abb_inserir(conjIntersec->conjuntoABB, elemento);
+        
         conjIntersec->tamanho++;
       }
     } 

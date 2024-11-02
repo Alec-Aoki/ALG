@@ -1,5 +1,7 @@
 {
   "files.associations": {
-    "heapmax.h": "c"
+    "heapmax.h": "c",
+    "stdbool.h": "c",
+    "abb.h": "c"
   }
 }
