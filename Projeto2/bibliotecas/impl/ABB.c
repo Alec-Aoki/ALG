@@ -25,7 +25,7 @@ void imprimirNaoOrdenada(NO *noRaiz);
 NO *no_criar(int chave, NO *noEsq, NO *noDir);
 void no_apagar(NO **no);
 void no_apagar_recursivo(NO *no);
-NO *copiar_no_recursivo(NO *no);
+NO *no_copiar_recursivo(NO *no);
 
 ABB *abb_criar(void){
   ABB *arvore = (ABB *) malloc(sizeof(ABB));
@@ -295,7 +295,7 @@ void no_apagar_recursivo(NO *no){
   return;
 }
 
-NO *copiar_no_recursivo(NO *no){
+NO *no_copiar_recursivo(NO *no){
   if(no == NULL) return NULL;
 
   NO *noNovo = no_criar(no->chave, NULL, NULL);
