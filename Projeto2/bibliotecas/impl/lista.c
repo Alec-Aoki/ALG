@@ -35,10 +35,10 @@ bool lista_inserir(LISTA *lista, int elemento){
     printf("Erro em lista_inserir: lista == NULL\n");
     return false;
   }
-  if(lista->tamanho == TAM_MAX) return false;
+  if(lista->tamanho > TAM_MAX) return false;
 
   int i = 0;
-  while(lista->vet[i] > elemento) i++;
+  while((lista->vet[i] > elemento) && (i < lista->tamanho)) i++;
 
   for(int j = lista->tamanho; j > i; j--){
     lista->vet[j] = lista->vet[j-1];
