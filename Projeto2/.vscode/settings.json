@@ -2,6 +2,7 @@
   "files.associations": {
     "heapmax.h": "c",
     "stdbool.h": "c",
-    "abb.h": "c"
+    "abb.h": "c",
+    "stdio.h": "c"
   }
 }
