@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "ABB.h"
+#include "../bibliotecas/ABB.h"
 
 #define ERRO -1
 
