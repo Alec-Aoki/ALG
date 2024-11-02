@@ -7,17 +7,21 @@
 struct lista_ {
   int vet[TAM_MAX];
   int tamanho;
+  int inicio;
+  int fim;
 };
 
 LISTA *lista_criar(void){
-  LISTA *listaNova = (LISTA *) malloc(sizeof(LISTA));
-  if(listaNova == NULL){
-    printf("Erro em lista_criar: listaNova == NULL\n");
+  LISTA *lista = (LISTA *) malloc(sizeof(LISTA));
+  if(lista == NULL){
+    printf("Erro em lista_criar: lista == NULL\n");
     return NULL;
   }
 
-  listaNova->tamanho = 0;
-  return listaNova;
+  lista->inicio = 0;
+  lista->fim = 0;
+  lista->tamanho = 0;
+  return lista;
 }
 
 void lista_apagar(LISTA **lista){
@@ -26,4 +30,13 @@ void lista_apagar(LISTA **lista){
   free(*lista);
   *lista = NULL;
   return;
+}
+
+bool lista_inserir(LISTA *lista, int elemento){
+  if(lista == NULL){
+    printf("Erro em lista_inserir: lista == NULL\n");
+    return false;
+  }
+
+
 }
