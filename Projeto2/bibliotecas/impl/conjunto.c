@@ -210,6 +210,7 @@ CONJUNTO *conjunto_copiar(CONJUNTO *conj){
   CONJUNTO *copiaConj = conjunto_criar(conj->TAD);
   if(copiaConj == NULL){
     printf("Erro em conjunto_copiar: copiaConj == NULL\n");
+    conjunto_apagar(copiaConj);
     return NULL;
   }
 
