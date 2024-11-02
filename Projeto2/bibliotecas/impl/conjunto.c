@@ -162,6 +162,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal)
   if(conjA == NULL) return NULL;
 
   CONJUNTO *conjIntersec = conjunto_criar(conjAOriginal->TAD);
+  if(conjIntersec == NULL) return NULL;
 
   if(conjIntersec->TAD == TAD_LISTA){
     for(int i = 0; i < conjA->tamanho; i++){
