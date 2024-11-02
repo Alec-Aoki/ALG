@@ -42,7 +42,7 @@ int main(void){
 
   int op;
   printf("Digite a operação:\n");
-  printf("1: PERTENCE\n");
+  printf("1: PERTENCE (Conjunto A)\n");
   printf("2: UNIAO\n");
   printf("3: INTERSEC\n");
   scanf("%d", &op);
@@ -52,25 +52,12 @@ int main(void){
       int elem;
       printf("Elemento a ser checado:\n");
       scanf("%d", &elem);
-      int conj;
-      printf("Conjunto a ser checado:\n");
-      scanf("%d", &conj);
 
-      if(conj == CONJ_A){
-        if(conjunto_pertence(conjA, elem)){
-          printf("Pertence.\n");
-        }
-        else{
-          printf("Não pertence.\n");
-        }
+      if(conjunto_pertence(conjA, elem)){
+        printf("Pertence.\n");
       }
       else{
-        if(conjunto_pertence(conjB, elem)){
-          printf("Pertence.\n");
-        }
-        else{
-          printf("Não pertence.\n");
-        }      
+        printf("Nao pertence.\n");
       }
       
       conjunto_apagar(&conjA);
