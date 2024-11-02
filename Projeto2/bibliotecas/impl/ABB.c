@@ -81,45 +81,6 @@ int abb_remover(ABB *arvore){
 
   arvore->raiz = removeRaizABB(raizVelha);
 
-/* REMOVER ELEMENTO ESPECÍFICO -> Desnecessário nesse caso
-  if(chave == arvore->raiz->chave){
-    NO *raizVelha = arvore->raiz;
-    int elemRemovido = raizVelha->chave;
-
-    arvore->raiz = removeRaizABB(raizVelha);
-    arvore->tamanho--;
-
-    return elemRemovido;
-  }
-
-  NO *noPai = NULL;
-  NO *noPercorrerArvore = arvore->raiz;
-  int posicao = NA;
-
-  while((noPercorrerArvore != NULL) && (noPercorrerArvore->chave != chave)){
-    posicao = NA;
-    noPai = noPercorrerArvore;
-    if(noPercorrerArvore->chave > chave){
-      noPercorrerArvore = noPercorrerArvore->noEsq;
-      posicao = ESQ;
-    }
-    else{
-      noPercorrerArvore = noPercorrerArvore->noDir;
-      posicao = DIR;
-    }
-  }
-
-  if(noPercorrerArvore == NULL) return ERRO; //Elemento não encontrado
-
-  int elemRemovido = noPercorrerArvore->chave;
-  if(posicao == ESQ){
-    noPai->noEsq = removeRaizABB(noPai->noEsq);
-  }
-  else{
-    noPai->noDir = removeRaizABB(noPai->noDir);
-  }
-*/
-
   arvore->tamanho--;
   return elemRemovido;
 }
@@ -132,12 +93,11 @@ void abb_imprimir(ABB *arvore, bool ordenada){
 
   if(ordenada){
     imprimirOrdenada(arvore->raiz);
-    printf("\n");
   }
   else{
     imprimirNaoOrdenada(arvore->raiz);
-    printf("\n");
   }
+  printf("\n");
 
   return;
 }
