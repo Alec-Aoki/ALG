@@ -20,3 +20,10 @@ LISTA *lista_criar(void){
   return listaNova;
 }
 
+void lista_apagar(LISTA **lista){
+  if(*lista == NULL) return;
+
+  free(*lista);
+  *lista = NULL;
+  return;
+}
