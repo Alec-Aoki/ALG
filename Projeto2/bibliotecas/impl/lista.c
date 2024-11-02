@@ -34,5 +34,14 @@ bool lista_inserir(LISTA *lista, int elemento){
     return false;
   }
 
+  int i = 0;
+  while(lista->vet[i] > elemento) i++;
+
+  for(int j = lista->tamanho; j > i; j--){
+    lista->vet[j] = lista->vet[j-1];
+  }
+  lista->vet[i] = elemento;
+  lista->tamanho++;
   
+  return true;
 }
