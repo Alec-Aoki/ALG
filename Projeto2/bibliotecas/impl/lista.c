@@ -84,6 +84,26 @@ int lista_busca(LISTA *lista, int chave){
   return buscaBinaria(lista->vet, 0, lista->tamanho - 1, chave);
 }
 
+LISTA *lista_copiar(LISTA *lista){
+  if(lista == NULL){
+    printf("Erro em lista_copiar: lista == NULL\n");
+    return NULL;
+  }
+
+  LISTA *listaCopia = lista_criar();
+  if(listaCopia == NULL){
+    printf("Erro em lista_copiar: listaCopia == NULL\n");
+    return NULL;
+  }
+
+  for(int i = 0; i < lista->tamanho; i++){
+    listaCopia->vet[i] = lista->vet[i];
+  }
+  listaCopia->tamanho = lista->tamanho;
+
+  return listaCopia;
+}
+
 int buscaBinaria(int v[], int inicio, int fim, int chave){
   if(inicio > fim) return ERRO;
 
