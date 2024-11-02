@@ -102,9 +102,8 @@ LISTA *lista_copiar(LISTA *lista){
   }
 
   for(int i = 0; i < lista->tamanho; i++){
-    listaCopia->vet[i] = lista->vet[i];
+    lista_inserir(listaCopia, lista->vet[i]);
   }
-  listaCopia->tamanho = lista->tamanho;
 
   return listaCopia;
 }
