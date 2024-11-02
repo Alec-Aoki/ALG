@@ -35,6 +35,7 @@ bool lista_inserir(LISTA *lista, int elemento){
     printf("Erro em lista_inserir: lista == NULL\n");
     return false;
   }
+  if(lista->tamanho == TAM_MAX) return false;
 
   int i = 0;
   while(lista->vet[i] > elemento) i++;
@@ -53,6 +54,7 @@ int lista_remover(LISTA *lista){
     printf("Erro em lista_remover: lista == NULL\n");
     return ERRO;
   }
+  if(lista->tamanho == 0) return ERRO;
 
   int elemRemovido = lista->vet[lista->tamanho - 1];
   lista->vet[lista->tamanho - 1] = ERRO;
@@ -80,6 +82,7 @@ int lista_busca(LISTA *lista, int chave){
     printf("Erro em lista_busca: lista == NULL\n");
     return ERRO;
   }
+  if(lista->tamanho == 0) return ERRO;
 
   return buscaBinaria(lista->vet, 0, lista->tamanho - 1, chave);
 }
