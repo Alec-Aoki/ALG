@@ -60,8 +60,6 @@ int main(void){
         printf("Nao pertence.\n");
       }
       
-      conjunto_apagar(&conjA);
-      conjunto_apagar(&conjB);
       break;
     }
     case UNIAO:{
@@ -86,5 +84,7 @@ int main(void){
     }
   }
 
+  conjunto_apagar(&conjA);
+  conjunto_apagar(&conjB);
   return EXIT_SUCCESS;
 }
