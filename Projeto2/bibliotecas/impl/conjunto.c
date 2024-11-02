@@ -214,5 +214,13 @@ CONJUNTO *conjunto_copiar(CONJUNTO *conj){
     return NULL;
   }
 
+  if(copiaConj->TAD == TAD_LISTA){
+    copiaConj->conjuntoLista = Lista_Copiar(conj->conjuntoLista);
+  }
+  else{
+    copiaConj->conjuntoABB = abb_copiar(conj->conjuntoABB);
+  }
+
+  copiaConj->tamanho = conj->tamanho;
   return copiaConj;
 }
