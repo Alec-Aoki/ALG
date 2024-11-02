@@ -54,6 +54,8 @@ bool abb_inserir(ABB *arvore, int elemento){
     return false;
   }
 
+  if(abb_busca(arvore, elemento) == elemento) return false;
+
   NO *noNovo = no_criar(elemento, NULL, NULL);
 
   arvore->raiz = inserirABB(arvore->raiz, noNovo);
@@ -75,6 +77,7 @@ int abb_remover(ABB *arvore){
     printf("Erro em abb_remover: arvore->raiz == NULL\n");
     return ERRO;
   }
+  if(arvore->tamanho == 0) return ERRO;
 
   NO *raizVelha = arvore->raiz;
   int elemRemovido = raizVelha->chave;
@@ -107,6 +110,7 @@ int abb_busca(ABB *arvore, int chave){
     printf("Erro em abb_busca: arvore == NULL\n");
     return ERRO;
   }
+  if(arvore->tamanho == 0) return ERRO;
 
   NO *noChave = buscaBinariaABB(arvore->raiz, chave);
   if(noChave == NULL) return ERRO;
