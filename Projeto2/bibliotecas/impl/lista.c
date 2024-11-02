@@ -39,6 +39,7 @@ bool lista_inserir(LISTA *lista, int elemento){
 
   int i = 0;
   while((lista->vet[i] < elemento) && (i < lista->tamanho)) i++;
+  if(lista->vet[i] == elemento) return false;
 
   for(int j = lista->tamanho; j > i; j--){
     lista->vet[j] = lista->vet[j-1];
