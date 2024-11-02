@@ -17,7 +17,7 @@ struct abb_{
   int tamanho;
 };
 
-NO *buscaBinaria(NO *noRaiz, int chave);
+NO *buscaBinariaABB(NO *noRaiz, int chave);
 NO *inserirABB(NO *noRaiz, NO *noNovo);
 NO *removeRaizABB(NO *noRaiz);
 void imprimirOrdenada(NO *noRaiz);
@@ -148,7 +148,7 @@ int abb_busca(ABB *arvore, int chave){
     return ERRO;
   }
 
-  NO *noChave = buscaBinaria(arvore->raiz, chave);
+  NO *noChave = buscaBinariaABB(arvore->raiz, chave);
   if(noChave == NULL) return ERRO;
 
   return noChave->chave;
@@ -172,16 +172,16 @@ ABB *abb_copiar(ABB *arvore){
   return copiaArvore;
 }
 
-NO *buscaBinaria(NO *noRaiz, int chave){
+NO *buscaBinariaABB(NO *noRaiz, int chave){
   if((noRaiz == NULL) || (noRaiz->chave == chave)){
     return noRaiz;
   }
 
   if(noRaiz->chave > chave){
-    return buscaBinaria(noRaiz->noEsq, chave);
+    return buscaBinariaABB(noRaiz->noEsq, chave);
   }
   else{
-    return buscaBinaria(noRaiz->noDir, chave);
+    return buscaBinariaABB(noRaiz->noDir, chave);
   }
 }
 

@@ -9,7 +9,7 @@ struct lista_ {
   int tamanho;
 };
 
-int buscaBinaria(int v[], int inicio, int fim, int chave);
+int buscaBinariaLista(int v[], int inicio, int fim, int chave);
 
 LISTA *lista_criar(void){
   LISTA *lista = (LISTA *) malloc(sizeof(LISTA));
@@ -85,7 +85,7 @@ int lista_busca(LISTA *lista, int chave){
   }
   if(lista->tamanho == 0) return ERRO;
 
-  return buscaBinaria(lista->vet, 0, lista->tamanho - 1, chave);
+  return buscaBinariaLista(lista->vet, 0, lista->tamanho - 1, chave);
 }
 
 LISTA *lista_copiar(LISTA *lista){
@@ -108,14 +108,14 @@ LISTA *lista_copiar(LISTA *lista){
   return listaCopia;
 }
 
-int buscaBinaria(int v[], int inicio, int fim, int chave){
+int buscaBinariaLista(int v[], int inicio, int fim, int chave){
   if(inicio > fim) return ERRO;
 
   int meio = (inicio + fim) / 2;
 
   if(v[meio] == chave) return chave;
-  else if(chave < v[meio]) return buscaBinaria(v, inicio, meio - 1, chave);
+  else if(chave < v[meio]) return buscaBinariaLista(v, inicio, meio - 1, chave);
   else{
-    return buscaBinaria(v, meio + 1, fim, chave);
+    return buscaBinariaLista(v, meio + 1, fim, chave);
   }
 }

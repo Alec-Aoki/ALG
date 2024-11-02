@@ -6,7 +6,7 @@ compile:
 	gcc -c ../bibliotecas/impl/ABB.c -o abb.o
 	gcc -c ../bibliotecas/impl/lista.c -o lista.o
 	gcc -c ../bibliotecas/impl/conjunto.c -o conjunto.o
-	gcc -c main.c -o main.o
+	gcc -c testeConj.c -o main.o
 
 run:
 	./main
