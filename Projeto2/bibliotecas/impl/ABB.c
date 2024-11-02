@@ -300,12 +300,12 @@ NO *no_copiar_recursivo(NO *no){
 
   NO *noNovo = no_criar(no->chave, NULL, NULL);
   if(noNovo == NULL){
-    printf("Erro em copiar_no_recursivo: noNovo == NULL\n");
+    printf("Erro em no_copiar_recursivo: noNovo == NULL\n");
     return NULL;
   }
 
-  noNovo->noEsq = copiar_no_recursivo(no->noEsq);
-  noNovo->noDir = copiar_no_recursivo(no->noDir);
+  noNovo->noEsq = no_copiar_recursivo(no->noEsq);
+  noNovo->noDir = no_copiar_recursivo(no->noDir);
 
   return noNovo;
 }
