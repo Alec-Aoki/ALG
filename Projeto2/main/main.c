@@ -41,6 +41,10 @@ int main(void){
   }
 
   int op;
+  printf("Digite a operação:\n");
+  printf("1: PERTENCE\n");
+  printf("2: UNIAO\n");
+  printf("3: INTERSEC\n");
   scanf("%d", &op);
   switch(op){
     case PERTENCE:{
@@ -89,7 +93,11 @@ int main(void){
       conjunto_apagar(&conjC);
       break;
     }
+    default:{
+      printf("Operação inválida\n");
+      break;
+    }
   }
 
-  return 0;
+  return EXIT_SUCCESS;
 }
