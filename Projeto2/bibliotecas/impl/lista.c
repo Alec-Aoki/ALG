@@ -7,8 +7,6 @@
 struct lista_ {
   int vet[TAM_MAX];
   int tamanho;
-  int inicio;
-  int fim;
 };
 
 LISTA *lista_criar(void){
@@ -18,8 +16,6 @@ LISTA *lista_criar(void){
     return NULL;
   }
 
-  lista->inicio = 0;
-  lista->fim = 0;
   lista->tamanho = 0;
   return lista;
 }
@@ -38,5 +34,5 @@ bool lista_inserir(LISTA *lista, int elemento){
     return false;
   }
 
-
+  
 }
