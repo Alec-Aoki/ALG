@@ -71,7 +71,7 @@ void lista_imprimir(LISTA *lista){
   }
 
   for(int i = 0; i < lista->tamanho; i++){
-    printf("%d ", lista->vet[i]);
+    if(lista->vet[i] != ERRO) printf("%d ", lista->vet[i]);
   }
   printf("\n");
 
@@ -85,7 +85,8 @@ int lista_busca(LISTA *lista, int chave){
   }
   if(lista->tamanho == 0) return ERRO;
 
-  return buscaBinariaLista(lista->vet, 0, lista->tamanho - 1, chave);
+  if(buscaBinariaLista(lista->vet, 0, lista->tamanho - 1, chave) != ERRO) return chave;
+  return ERRO;
 }
 
 LISTA *lista_copiar(LISTA *lista){
@@ -113,7 +114,7 @@ int buscaBinariaLista(int v[], int inicio, int fim, int chave){
 
   int meio = (inicio + fim) / 2;
 
-  if(v[meio] == chave) return chave;
+  if(v[meio] == chave) return meio;
   else if(chave < v[meio]) return buscaBinariaLista(v, inicio, meio - 1, chave);
   else{
     return buscaBinariaLista(v, meio + 1, fim, chave);
