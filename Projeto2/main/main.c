@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "conjunto.h"
+#include "../bibliotecas/conjunto.h"
 
-#define ERRO -404  // Adding this since it's used but not defined in header
+#define ERRO 1000010
 
 // Test function prototypes
 bool test_criar(void);
