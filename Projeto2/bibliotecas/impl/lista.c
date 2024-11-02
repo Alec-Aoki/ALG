@@ -113,7 +113,7 @@ int buscaBinaria(int v[], int inicio, int fim, int chave){
 
   int meio = (inicio + fim) / 2;
 
-  if(v[meio] == chave) return meio;
+  if(v[meio] == chave) return chave;
   else if(chave < v[meio]) return buscaBinaria(v, inicio, meio - 1, chave);
   else{
     return buscaBinaria(v, meio + 1, fim, chave);
