@@ -42,6 +42,19 @@ bool lista_inserir(LISTA *lista, int elemento){
   }
   lista->vet[i] = elemento;
   lista->tamanho++;
-  
+
   return true;
+}
+
+int lista_remover(LISTA *lista){
+  if(lista == NULL){
+    printf("Erro em lista_remover: lista == NULL\n");
+    return ERRO;
+  }
+
+  int elemRemovido = lista->vet[lista->tamanho - 1];
+  lista->vet[lista->tamanho - 1] = ERRO;
+  lista->tamanho--;
+
+  return elemRemovido;
 }
