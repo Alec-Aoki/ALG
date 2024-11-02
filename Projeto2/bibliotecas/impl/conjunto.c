@@ -105,10 +105,14 @@ bool conjunto_pertence(CONJUNTO *conj, int elemento){
   return false;
 }
 
-CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
+CONJUNTO *conjunto_uniao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal){
+  if((conjAOriginal == NULL) || (conjBOriginal == NULL)) return NULL;
+
+  CONJUNTO *conjA = conjunto_copiar(conjAOriginal);
+  CONJUNTO *conjB = conjunto_copiar(conjBOriginal);
   if((conjA == NULL) || (conjB == NULL)) return NULL;
 
-  CONJUNTO *conjUniao = conjunto_criar(conjA->TAD);
+  CONJUNTO *conjUniao = conjunto_criar(conjAOriginal->TAD);
 
   if(conjUniao->TAD == TAD_LISTA){
     for(int i = 0; i < conjA->tamanho; i++){
@@ -151,10 +155,14 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
   return conjUniao;
 }
 
-CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
+CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal){
+  if((conjAOriginal == NULL) || (conjBOriginal == NULL)) return NULL;
+
+  CONJUNTO *conjA = conjunto_copiar(conjAOriginal);
+  CONJUNTO *conjB = conjunto_copiar(conjBOriginal);
   if((conjA == NULL) || (conjB == NULL)) return NULL;
 
-  CONJUNTO *conjIntersec = conjunto_criar(conjA->TAD);
+  CONJUNTO *conjIntersec = conjunto_criar(conjAOriginal->TAD);
 
   if(conjIntersec->TAD == TAD_LISTA){
     for(int i = 0; i < conjA->tamanho; i++){
@@ -213,6 +221,7 @@ CONJUNTO *conjunto_copiar(CONJUNTO *conj){
     conjunto_apagar(copiaConj);
     return NULL;
   }
+  copiaConj->TAD = conj->TAD;
 
   if(copiaConj->TAD == TAD_LISTA){
     copiaConj->conjuntoLista = Lista_Copiar(conj->conjuntoLista);
