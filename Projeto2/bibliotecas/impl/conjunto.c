@@ -148,9 +148,6 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB){
     }
   }
 
-  conjunto_apagar(&conjA);
-  conjunto_apagar(&conjB);
-
   return conjUniao;
 }
 
@@ -201,8 +198,20 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB){
     } 
   }
 
-  conjunto_apagar(&conjA);
-  conjunto_apagar(&conjB);
-
   return conjIntersec;
+}
+
+CONJUNTO *conjunto_copiar(CONJUNTO *conj){
+  if(conj == NULL){
+    printf("Erro em conjunto_copiar: conj == NULL\n");
+    return NULL;
+  }
+
+  CONJUNTO *copiaConj = conjunto_criar(conj->TAD);
+  if(copiaConj == NULL){
+    printf("Erro em conjunto_copiar: copiaConj == NULL\n");
+    return NULL;
+  }
+
+  return copiaConj;
 }

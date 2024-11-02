@@ -14,5 +14,6 @@
   bool conjunto_pertence(CONJUNTO *conj, int elemento);
   CONJUNTO *conjunto_uniao(CONJUNTO *conjA, CONJUNTO *conjB);
   CONJUNTO *conjunto_interseccao(CONJUNTO *conjA, CONJUNTO *conjB);
+  CONJUNTO *conjunto_copiar(CONJUNTO *conj);
 
 #endif
