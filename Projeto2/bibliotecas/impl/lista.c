@@ -74,6 +74,7 @@ void lista_imprimir(LISTA *lista){
     if(lista->vet[i] != ERRO) printf("%d ", lista->vet[i]);
   }
   printf("\n");
+  fflush(stdout);
 
   return;
 }

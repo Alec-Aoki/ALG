@@ -101,6 +101,7 @@ void abb_imprimir(ABB *arvore, bool ordenada){
     imprimirNaoOrdenada(arvore->raiz);
   }
   printf("\n");
+  fflush(stdout);
 
   return;
 }
@@ -214,6 +215,7 @@ void imprimirNaoOrdenada(NO *noRaiz){
     imprimirNaoOrdenada(noRaiz->noEsq);
     imprimirNaoOrdenada(noRaiz->noDir);
   }
+  fflush(stdout);
 
   return;
 }
@@ -224,6 +226,7 @@ void imprimirOrdenada(NO *noRaiz){
     printf("%d ", noRaiz->chave);
     imprimirOrdenada(noRaiz->noDir);
   }
+  fflush(stdout);
 
   return;
 }
