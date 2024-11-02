@@ -1,202 +1,277 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "conjunto.h"
 
-#include "../bibliotecas/conjunto.h"
+#define ERRO -404  // Adding this since it's used but not defined in header
 
-void print_separator() {
-    printf("\n====================================\n");
+// Test function prototypes
+bool test_criar(void);
+bool test_inserir(void);
+bool test_pertence(void);
+bool test_remover(void);
+bool test_uniao(void);
+bool test_interseccao(void);
+
+// Utility function to print test results
+void print_test_result(const char* test_name, bool passed, const char* details) {
+    printf("\n=== Test: %s ===\n", test_name);
+    printf("Result: %s\n", passed ? "PASSED" : "FAILED");
+    if (details != NULL) {
+        printf("Details: %s\n", details);
+    }
+    printf("================\n");
 }
 
-void test_conjunto_criar() {
-    print_separator();
-    printf("TESTING CONJUNTO_CRIAR\n");
-    print_separator();
+int main(void) {
+    printf("Starting Conjunto ADT Tests...\n\n");
     
-    printf("Test 1: Creating TAD_LISTA conjunto\n");
-    CONJUNTO *conj_lista = conjunto_criar(TAD_LISTA);
-    if (conj_lista != NULL) {
-        printf("SUCCESS: List conjunto created\n");
-        conjunto_apagar(&conj_lista);
-    } else {
-        printf("FAIL: Could not create list conjunto\n");
-    }
-
-    printf("\nTest 2: Creating TAD_ARVORE conjunto\n");
-    CONJUNTO *conj_arvore = conjunto_criar(TAD_ARVORE);
-    if (conj_arvore != NULL) {
-        printf("SUCCESS: Tree conjunto created\n");
-        conjunto_apagar(&conj_arvore);
-    } else {
-        printf("FAIL: Could not create tree conjunto\n");
-    }
-
-    printf("\nTest 3: Testing invalid TAD value\n");
-    CONJUNTO *conj_invalid = conjunto_criar(999);
-    if (conj_invalid == NULL) {
-        printf("SUCCESS: Correctly rejected invalid TAD value\n");
-    } else {
-        printf("FAIL: Accepted invalid TAD value\n");
-        conjunto_apagar(&conj_invalid);
-    }
-}
-
-void test_conjunto_inserir() {
-    print_separator();
-    printf("TESTING CONJUNTO_INSERIR\n");
-    print_separator();
-
-    printf("Test 1: Inserting into TAD_LISTA conjunto\n");
-    CONJUNTO *conj_lista = conjunto_criar(TAD_LISTA);
-    if (conjunto_inserir(conj_lista, 10)) {
-        printf("SUCCESS: Inserted 10\n");
-    } else {
-        printf("FAIL: Could not insert 10\n");
-    }
-    printf("Current conjunto: ");
-    conjunto_imprimir(conj_lista);
-    conjunto_apagar(&conj_lista);
-
-    printf("\nTest 2: Inserting into TAD_ARVORE conjunto\n");
-    CONJUNTO *conj_arvore = conjunto_criar(TAD_ARVORE);
-    if (conjunto_inserir(conj_arvore, 20)) {
-        printf("SUCCESS: Inserted 20\n");
-    } else {
-        printf("FAIL: Could not insert 20\n");
-    }
-    printf("Current conjunto: ");
-    conjunto_imprimir(conj_arvore);
-    conjunto_apagar(&conj_arvore);
-
-    printf("\nTest 3: Testing NULL conjunto\n");
-    if (!conjunto_inserir(NULL, 30)) {
-        printf("SUCCESS: Correctly handled NULL conjunto\n");
-    } else {
-        printf("FAIL: Incorrectly handled NULL conjunto\n");
-    }
-}
-
-void test_conjunto_pertence() {
-    print_separator();
-    printf("TESTING CONJUNTO_PERTENCE\n");
-    print_separator();
-
-    printf("Test 1: Testing with TAD_LISTA\n");
-    CONJUNTO *conj_lista = conjunto_criar(TAD_LISTA);
-    conjunto_inserir(conj_lista, 10);
-    conjunto_inserir(conj_lista, 20);
-    conjunto_inserir(conj_lista, 30);
-    printf("Conjunto atual: ");
-    conjunto_imprimir(conj_lista);
+    int passed = 0;
+    int total = 6;  // Total number of test categories
     
-    printf("\nChecking for 20: %s\n", conjunto_pertence(conj_lista, 20) ? "Found" : "Not found");
-    printf("Checking for 40: %s\n", conjunto_pertence(conj_lista, 40) ? "Found" : "Not found");
-    conjunto_apagar(&conj_lista);
-
-    printf("\nTest 2: Testing with TAD_ARVORE\n");
-    CONJUNTO *conj_arvore = conjunto_criar(TAD_ARVORE);
-    conjunto_inserir(conj_arvore, 10);
-    conjunto_inserir(conj_arvore, 20);
-    conjunto_inserir(conj_arvore, 30);
-    printf("Conjunto atual: ");
-    conjunto_imprimir(conj_arvore);
+    // Run all tests
+    passed += test_criar();
+    passed += test_inserir();
+    passed += test_pertence();
+    passed += test_remover();
+    passed += test_uniao();
+    passed += test_interseccao();
     
-    printf("\nChecking for 20: %s\n", conjunto_pertence(conj_arvore, 20) ? "Found" : "Not found");
-    printf("Checking for 40: %s\n", conjunto_pertence(conj_arvore, 40) ? "Found" : "Not found");
-    conjunto_apagar(&conj_arvore);
-}
-
-void test_conjunto_uniao() {
-    print_separator();
-    printf("TESTING CONJUNTO_UNIAO\n");
-    print_separator();
-
-    printf("Test 1: Union of TAD_LISTA conjuntos\n");
-    CONJUNTO *conj_a = conjunto_criar(TAD_LISTA);
-    CONJUNTO *conj_b = conjunto_criar(TAD_LISTA);
+    printf("\n=== Final Test Summary ===\n");
+    printf("Passed: %d/%d test categories\n", passed, total);
+    printf("Overall Status: %s\n", (passed == total) ? "ALL TESTS PASSED!" : "SOME TESTS FAILED!");
     
-    // Create copies for display since union destroys original sets
-    CONJUNTO *display_a = conjunto_criar(TAD_LISTA);
-    CONJUNTO *display_b = conjunto_criar(TAD_LISTA);
-    
-    int valores_a[] = {10, 20, 30};
-    int valores_b[] = {20, 30, 40};
-    
-    for (int i = 0; i < 3; i++) {
-        conjunto_inserir(conj_a, valores_a[i]);
-        conjunto_inserir(display_a, valores_a[i]);
-        conjunto_inserir(conj_b, valores_b[i]);
-        conjunto_inserir(display_b, valores_b[i]);
-    }
-    
-    printf("Conjunto A: ");
-    conjunto_imprimir(display_a);
-    printf("Conjunto B: ");
-    conjunto_imprimir(display_b);
-    
-    CONJUNTO *uniao = conjunto_uniao(conj_a, conj_b);
-    printf("União: ");
-    if (uniao != NULL) {
-        conjunto_imprimir(uniao);
-        conjunto_apagar(&uniao);
-    } else {
-        printf("FAIL: Union operation failed\n");
-    }
-    
-    conjunto_apagar(&display_a);
-    conjunto_apagar(&display_b);
-}
-
-void test_conjunto_interseccao() {
-    print_separator();
-    printf("TESTING CONJUNTO_INTERSECCAO\n");
-    print_separator();
-
-    printf("Test 1: Intersection of TAD_LISTA conjuntos\n");
-    CONJUNTO *conj_a = conjunto_criar(TAD_LISTA);
-    CONJUNTO *conj_b = conjunto_criar(TAD_LISTA);
-    
-    // Create copies for display since intersection destroys original sets
-    CONJUNTO *display_a = conjunto_criar(TAD_LISTA);
-    CONJUNTO *display_b = conjunto_criar(TAD_LISTA);
-    
-    int valores_a[] = {10, 20, 30};
-    int valores_b[] = {20, 30, 40};
-    
-    for (int i = 0; i < 3; i++) {
-        conjunto_inserir(conj_a, valores_a[i]);
-        conjunto_inserir(display_a, valores_a[i]);
-        conjunto_inserir(conj_b, valores_b[i]);
-        conjunto_inserir(display_b, valores_b[i]);
-    }
-    
-    printf("Conjunto A: ");
-    conjunto_imprimir(display_a);
-    printf("Conjunto B: ");
-    conjunto_imprimir(display_b);
-    
-    CONJUNTO *intersec = conjunto_interseccao(conj_a, conj_b);
-    printf("Intersecção: ");
-    if (intersec != NULL) {
-        conjunto_imprimir(intersec);
-        conjunto_apagar(&intersec);
-    } else {
-        printf("FAIL: Intersection operation failed\n");
-    }
-    
-    conjunto_apagar(&display_a);
-    conjunto_apagar(&display_b);
-}
-
-int main() {
-    printf("STARTING CONJUNTO ADT TESTS\n");
-    
-    test_conjunto_criar();
-    test_conjunto_inserir();
-    test_conjunto_pertence();
-    test_conjunto_uniao();
-    test_conjunto_interseccao();
-    
-    printf("\nTESTS COMPLETED\n");
     return 0;
+}
+
+bool test_criar(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test 1: Create with valid TAD_LISTA
+    CONJUNTO* conj_lista = conjunto_criar(TAD_LISTA);
+    if (conj_lista == NULL) {
+        all_passed = false;
+        strcat(details, "Failed to create lista conjunto. ");
+    }
+    
+    // Test 2: Create with valid TAD_ARVORE
+    CONJUNTO* conj_arvore = conjunto_criar(TAD_ARVORE);
+    if (conj_arvore == NULL) {
+        all_passed = false;
+        strcat(details, "Failed to create arvore conjunto. ");
+    }
+    
+    // Test 3: Create with invalid TAD
+    CONJUNTO* conj_invalid = conjunto_criar(99);
+    if (conj_invalid != NULL) {
+        all_passed = false;
+        strcat(details, "Should return NULL for invalid TAD. ");
+    }
+    
+    // Cleanup
+    conjunto_apagar(&conj_lista);
+    conjunto_apagar(&conj_arvore);
+    
+    if (all_passed) {
+        strcat(details, "All creation tests passed successfully.");
+    }
+    
+    print_test_result("Creation Tests", all_passed, details);
+    return all_passed;
+}
+
+bool test_inserir(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test both implementations
+    for (int tad = TAD_LISTA; tad <= TAD_ARVORE; tad++) {
+        CONJUNTO* conj = conjunto_criar(tad);
+        
+        // Test basic insertion
+        if (!conjunto_inserir(conj, 10)) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Failed to insert 10 in TAD %d. ", tad);
+        }
+        
+        // Test multiple insertions
+        if (!conjunto_inserir(conj, 20) || !conjunto_inserir(conj, 30)) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Failed multiple insertions in TAD %d. ", tad);
+        }
+        
+        conjunto_apagar(&conj);
+    }
+    
+    // Test insertion into NULL conjunto
+    if (conjunto_inserir(NULL, 10)) {
+        all_passed = false;
+        strcat(details, "Should fail insertion into NULL conjunto. ");
+    }
+    
+    if (all_passed) {
+        strcat(details, "All insertion tests passed successfully.");
+    }
+    
+    print_test_result("Insertion Tests", all_passed, details);
+    return all_passed;
+}
+
+bool test_pertence(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test both implementations
+    for (int tad = TAD_LISTA; tad <= TAD_ARVORE; tad++) {
+        CONJUNTO* conj = conjunto_criar(tad);
+        
+        // Insert some elements
+        conjunto_inserir(conj, 10);
+        conjunto_inserir(conj, 20);
+        conjunto_inserir(conj, 30);
+        
+        // Test presence of inserted elements
+        if (!conjunto_pertence(conj, 10) || !conjunto_pertence(conj, 20) || !conjunto_pertence(conj, 30)) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Failed to find inserted element in TAD %d. ", tad);
+        }
+        
+        // Test absence of non-inserted element
+        if (conjunto_pertence(conj, 40)) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Found non-existent element in TAD %d. ", tad);
+        }
+        
+        conjunto_apagar(&conj);
+    }
+    
+    if (all_passed) {
+        strcat(details, "All pertence tests passed successfully.");
+    }
+    
+    print_test_result("Pertence Tests", all_passed, details);
+    return all_passed;
+}
+
+bool test_remover(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test both implementations
+    for (int tad = TAD_LISTA; tad <= TAD_ARVORE; tad++) {
+        CONJUNTO* conj = conjunto_criar(tad);
+        
+        // Insert elements
+        conjunto_inserir(conj, 10);
+        conjunto_inserir(conj, 20);
+        
+        // Test removal
+        int removed = conjunto_remover(conj);
+        if (removed == ERRO) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Failed to remove from non-empty conjunto in TAD %d. ", tad);
+        }
+        
+        conjunto_apagar(&conj);
+    }
+    
+    // Test removal from NULL conjunto
+    if (conjunto_remover(NULL) != ERRO) {
+        all_passed = false;
+        strcat(details, "Should return ERRO when removing from NULL conjunto. ");
+    }
+    
+    if (all_passed) {
+        strcat(details, "All removal tests passed successfully.");
+    }
+    
+    print_test_result("Removal Tests", all_passed, details);
+    return all_passed;
+}
+
+bool test_uniao(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test both implementations
+    for (int tad = TAD_LISTA; tad <= TAD_ARVORE; tad++) {
+        CONJUNTO* conjA = conjunto_criar(tad);
+        CONJUNTO* conjB = conjunto_criar(tad);
+        
+        // Insert elements
+        conjunto_inserir(conjA, 10);
+        conjunto_inserir(conjA, 20);
+        conjunto_inserir(conjB, 20);
+        conjunto_inserir(conjB, 30);
+        
+        // Test union
+        CONJUNTO* uniao = conjunto_uniao(conjA, conjB);
+        if (uniao == NULL) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Union operation failed for TAD %d. ", tad);
+            continue;
+        }
+        
+        // Note: Original sets are destroyed by union operation
+        // This is potentially unexpected behavior that should be documented
+        
+        conjunto_apagar(&uniao);
+    }
+    
+    // Test union with NULL conjunto
+    if (conjunto_uniao(NULL, NULL) != NULL) {
+        all_passed = false;
+        strcat(details, "Should return NULL when inputs are NULL. ");
+    }
+    
+    if (all_passed) {
+        strcat(details, "All union tests passed successfully. Note: Union destroys input sets.");
+    }
+    
+    print_test_result("Union Tests", all_passed, details);
+    return all_passed;
+}
+
+bool test_interseccao(void) {
+    bool all_passed = true;
+    char details[200] = "";
+    
+    // Test both implementations
+    for (int tad = TAD_LISTA; tad <= TAD_ARVORE; tad++) {
+        CONJUNTO* conjA = conjunto_criar(tad);
+        CONJUNTO* conjB = conjunto_criar(tad);
+        
+        // Insert elements
+        conjunto_inserir(conjA, 10);
+        conjunto_inserir(conjA, 20);
+        conjunto_inserir(conjB, 20);
+        conjunto_inserir(conjB, 30);
+        
+        // Test intersection
+        CONJUNTO* intersec = conjunto_interseccao(conjA, conjB);
+        if (intersec == NULL) {
+            all_passed = false;
+            sprintf(details + strlen(details), "Intersection operation failed for TAD %d. ", tad);
+            continue;
+        }
+        
+        // Note: Original sets are destroyed by intersection operation
+        // This is potentially unexpected behavior that should be documented
+        
+        conjunto_apagar(&intersec);
+    }
+    
+    // Test intersection with NULL conjunto
+    if (conjunto_interseccao(NULL, NULL) != NULL) {
+        all_passed = false;
+        strcat(details, "Should return NULL when inputs are NULL. ");
+    }
+    
+    if (all_passed) {
+        strcat(details, "All intersection tests passed successfully. Note: Intersection destroys input sets.");
+    }
+    
+    print_test_result("Intersection Tests", all_passed, details);
+    return all_passed;
 }
