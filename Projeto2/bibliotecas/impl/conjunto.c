@@ -159,8 +159,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal)
   if((conjAOriginal == NULL) || (conjBOriginal == NULL)) return NULL;
 
   CONJUNTO *conjA = conjunto_copiar(conjAOriginal);
-  CONJUNTO *conjB = conjunto_copiar(conjBOriginal);
-  if((conjA == NULL) || (conjB == NULL)) return NULL;
+  if(conjA == NULL) return NULL;
 
   CONJUNTO *conjIntersec = conjunto_criar(conjAOriginal->TAD);
 
@@ -168,16 +167,7 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal)
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = lista_remover(conjA->conjuntoLista);
 
-      if(lista_busca(conjB->conjuntoLista, elemento) == elemento){
-        lista_inserir(conjIntersec->conjuntoLista, elemento);
-
-        conjIntersec->tamanho++;
-      }
-    }
-    for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = lista_remover(conjB->conjuntoLista);
-
-      if(lista_busca(conjA->conjuntoLista, elemento) == elemento){
+      if(conjunto_pertence(conjBOriginal, elemento)){
         lista_inserir(conjIntersec->conjuntoLista, elemento);
 
         conjIntersec->tamanho++;
@@ -189,23 +179,15 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal)
     for(int i = 0; i < conjA->tamanho; i++){
       int elemento = abb_remover(conjA->conjuntoABB);
 
-      if(abb_busca(conjB->conjuntoABB, elemento) == elemento){
+      if(conjunto_pertence(conjBOriginal, elemento)){
         abb_inserir(conjIntersec->conjuntoABB, elemento);
 
         conjIntersec->tamanho++;
       }
     }
-    for(int i = 0; i < conjB->tamanho; i++){
-      int elemento = abb_remover(conjB->conjuntoABB);
-
-      if(abb_busca(conjA->conjuntoABB, elemento) == elemento){
-        abb_inserir(conjIntersec->conjuntoABB, elemento);
-        
-        conjIntersec->tamanho++;
-      }
-    } 
   }
 
+  conjunto_apagar(&conjA);
   return conjIntersec;
 }
 
