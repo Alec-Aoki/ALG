@@ -112,14 +112,14 @@ CONJUNTO *conjunto_uniao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal){
   CONJUNTO *conjA = conjunto_copiar(conjAOriginal);
   CONJUNTO *conjB = conjunto_copiar(conjBOriginal);
   if((conjA == NULL) || (conjB == NULL)){
-    conjunto_apagar(conjA);
-    conjunto_apagar(conjB);
+    conjunto_apagar(&conjA);
+    conjunto_apagar(&conjB);
     return NULL;
   }
 
   CONJUNTO *conjUniao = conjunto_criar(conjAOriginal->TAD);
   if(conjUniao == NULL){
-    conjunto_apagar(conjUniao);
+    conjunto_apagar(&conjUniao);
     return NULL;
   }
 
@@ -171,13 +171,13 @@ CONJUNTO *conjunto_interseccao(CONJUNTO *conjAOriginal, CONJUNTO *conjBOriginal)
 
   CONJUNTO *conjA = conjunto_copiar(conjAOriginal);
   if(conjA == NULL){
-    conjunto_apagar(conjA);
+    conjunto_apagar(&conjA);
     return NULL;
   }
 
   CONJUNTO *conjIntersec = conjunto_criar(conjAOriginal->TAD);
   if(conjIntersec == NULL){
-    conjunto_apagar(conjIntersec);
+    conjunto_apagar(&conjIntersec);
     return NULL;
   }
 
