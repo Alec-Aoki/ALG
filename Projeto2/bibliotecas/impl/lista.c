@@ -90,7 +90,7 @@ LISTA *lista_copiar(LISTA *lista){
   if(listaCopia == NULL) return NULL;
 
   for(int i = 0; i < lista->tamanho; i++){
-    listaCopia->vet[i] = lista->vet[i];
+    lista_inserir(listaCopia, lista->vet[i]);
   }
 
   return listaCopia;
