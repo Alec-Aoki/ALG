@@ -22,6 +22,8 @@ void ab_imprimir_pre(NO *noRaiz);
 void ab_imprimir_em(NO *noRaiz);
 void ab_imprimir_pos(NO *noRaiz);
 void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai);
+void ab_busca_no(NO *noRaiz, int chave, bool *pertence);
+void ab_remover_no(NO *noRaiz, int chave);
 
 AB *ab_criar(void){
   AB *arv = (AB *) malloc(sizeof(AB));
@@ -50,7 +52,7 @@ bool ab_inserir(AB *arv, int elemento, int chavePai, int lado){
   NO *noNovo = no_criar(elemento, NULL, NULL);
   if(noNovo == NULL) return false;
 
-  ab_inserir_no(arv->noRaiz, noNovo, lado, chavePai);
+  ab_remover_no(arv->noRaiz, noNovo, lado, chavePai);
   arv->tamanho++;
 
   return true;
@@ -74,9 +76,43 @@ void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai){
   return;
 }
 
-int ab_remover(AB *arv);
+int ab_remover(AB *arv, int chave){
+  if(arv == NULL) return -1;
+}
 
-int ab_busca(AB *arv, int chave);
+void ab_remover_no(NO *noRaiz, int chave){
+  if(noRaiz == NULL) return;
+
+  /*PÓS ORDEM*/
+  ab_remover_no(noRaiz->noEsq, chave);
+  ab_remover_no(noRaiz->noDir, chave);
+  if(chave == noRaiz->chave){
+
+  }
+
+  return;
+}
+
+int ab_busca(AB *arv, int chave){
+  if(arv == NULL) return -1;
+
+  bool pertence = false;
+  ab_busca_no(arv->noRaiz, chave, &pertence);
+  if(pertence) return chave;
+  //else:
+  return -1;
+}
+
+void ab_busca_no(NO *noRaiz, int chave, bool *pertence){
+  if(noRaiz == NULL) return;
+
+  /*PÓS ORDEM*/
+  ab_busca_no(noRaiz->noEsq, chave);
+  ab_busca_no(noRaiz->noDir, chave);
+  if(noRaiz->chave == chave) *pertence = true;
+
+  return;
+}
 
 void ab_imprimir(AB *arv, int ordem){
   if(arv == NULL) return;

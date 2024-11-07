@@ -13,7 +13,7 @@
   AB *ab_criar(void);
   void ab_apagar(AB **arv);
   bool ab_inserir(AB *arv, int elemento, int chavePai, int lado);
-  int ab_remover(AB *arv);
+  int ab_remover(AB *arv, int chave);
   void ab_imprimir(AB *arvore, int ordem);
   int ab_busca(AB *arvore, int chave);
   bool ab_cheia(AB *arvore);
