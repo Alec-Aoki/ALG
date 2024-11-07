@@ -17,7 +17,7 @@ int main(void) {
 
     ab_inserir(arvore, item_criar(chave, NULL), lado, pai);
   }
-
+  
   if(ab_estritamente_binaria(arvore)) {
     printf("NÃO!");
   }

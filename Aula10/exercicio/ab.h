@@ -1,5 +1,5 @@
-#ifndef _ARVORE_BINARIA_H
-#define _ARVORE_BINARIA_H
+#ifndef AB_H
+  #define AB_H
  
   #include  "item.h"
   #define ERRO -32000
@@ -12,9 +12,6 @@
  bool ab_inserir (AB *T, ITEM *item, int lado, int chave);
  void ab_imprimir (AB *T);
  void ab_apagar_arvore(AB **T);
- 
- 
- int ab_estritamente_binaria (AB *T); /*Essa função devolve 0 se a Árvore é estritamente binária e 1 caso contrário*/
- 
-   
+ int ab_estritamente_binaria (AB *T); /*0 = estrt binaria, 1 = nao estrt binaria*/
+
 #endif

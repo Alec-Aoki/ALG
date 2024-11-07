@@ -52,7 +52,7 @@ bool ab_inserir(AB *arv, int elemento, int chavePai, int lado){
   NO *noNovo = no_criar(elemento, NULL, NULL);
   if(noNovo == NULL) return false;
 
-  ab_remover_no(arv->noRaiz, noNovo, lado, chavePai);
+  ab_inserir_no(arv->noRaiz, noNovo, lado, chavePai);
   arv->tamanho++;
 
   return true;
@@ -107,8 +107,8 @@ void ab_busca_no(NO *noRaiz, int chave, bool *pertence){
   if(noRaiz == NULL) return;
 
   /*PÓS ORDEM*/
-  ab_busca_no(noRaiz->noEsq, chave);
-  ab_busca_no(noRaiz->noDir, chave);
+  ab_busca_no(noRaiz->noEsq, chave, pertence);
+  ab_busca_no(noRaiz->noDir, chave, pertence);
   if(noRaiz->chave == chave) *pertence = true;
 
   return;
