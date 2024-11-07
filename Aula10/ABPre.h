@@ -1,5 +1,5 @@
-#ifndef AB_H
-  #define AB_H
+#ifndef ABPRE_H
+  #define ABPRE_H
 
   #define PRE_ORDEM 0
   #define EM_ORDEM 1
@@ -8,14 +8,14 @@
   #define DIR 1
 
   typedef struct ab_ AB;
-  typedef struct no_ NO;
 
   AB *ab_criar(void);
   void ab_apagar(AB **arv);
-  bool ab_inserir(AB *arv, int elemento, int chavePai, int lado);
+  bool ab_inserir(AB *arv, int elemento);
   int ab_remover(AB *arv);
   void ab_imprimir(AB *arvore, int ordem);
   int ab_busca(AB *arvore, int chave);
+  AB *ab_copiar(AB *arvore);
   bool ab_cheia(AB *arvore);
 
 #endif

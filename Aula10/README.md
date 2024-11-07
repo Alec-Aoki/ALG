@@ -47,8 +47,9 @@
               11 N N N       N N N  N
 ```
 - Implementação (sequencial):
-  - Filho da esquerda do nó na posição ```i```: ```2i + 1```;
-  - Filho da direita do nó na posição ```i```: ```2i + 2```;.
+  - Filho da esquerda do nó na posição ```i```: ```2*i + 1```;
+  - Filho da direita do nó na posição ```i```: ```2*i + 2```;
+  - Pai do nó na posição ```i```: ```(i - 1)/2```.
 
 ## Árvore Binária Completa (ABC)
 
@@ -71,3 +72,26 @@
 
 - Para cada nó, **a altura** das suas sub-árvores diferem em, no máximo, 1;
 - Toda Árvore Binária Perfeitamente Balanceada é uma Árvore Binária Balanceada, mas o oposto não é verdade.
+
+# Percursos
+- Percorrer uma AB é visitar cada nó uma única vez;
+  - Entende-se visita como tomar uma ação sobre o nó, não apenas passar por ele.
+- Percurso: sequência linar de nós, segundo um dado percurso.
+```
+                            A
+                        B        C
+                      D       E     F
+                        G    H I
+```
+1. Pré-Ordem: ```A B D G C E H I F```;
+   1. Visita a raíz;
+   2. Percore a sub-árvore esquerda em pré-ordem;
+   3. Percorre a sub-árvore direita em pré-ordem;
+2. Em-Ordem: ```D G B A H E I C F```;
+   1. Percorre a sub-árvore esquerda em em-ordem;
+   2. Visita a raíz;
+   3. Percorre a sub-árvore direita em em-ordem;
+3. Pós-Ordem ```G D B H I E F C A```;
+   1. Percore a sub-árvore esquerda em pós-ordem;
+   2. Percorre a sub-árvore direita em pós-ordem;
+   3. Visita a raíz.

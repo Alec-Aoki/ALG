@@ -2,10 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "item.h"
 #include "AB.h"
 
-typedef struct no_ NO;
 struct no_{
   int chave;
   NO *noEsq;
@@ -14,126 +12,135 @@ struct no_{
 NO *no_criar(int chave, NO *noEsq, NO *noDir);
 void no_apagar(NO **no);
 void no_apagar_recursivo(NO *no);
-NO *no_copiar_recursivo(NO *no);
 
 struct ab_{
   NO *noRaiz;
-  int profund;
-  int tam; //quantidade total de nós
+  int tamanho;
+  //int profundidade;
 };
-
+void ab_imprimir_pre(NO *noRaiz);
+void ab_imprimir_em(NO *noRaiz);
+void ab_imprimir_pos(NO *noRaiz);
 void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai);
-void ab_preordem(NO *noRaiz);
-void ab_emordem(NO *noRaiz);
-void ab_posordem(NO *noRaiz);
 
 AB *ab_criar(void){
-  AB *ab = (AB *) malloc(sizeof(AB));
-  if(ab != NULL){
-    ab->noRaiz = NULL;
-    ab->profund = -1;
-    ab->tam = 0;
-  }
+  AB *arv = (AB *) malloc(sizeof(AB));
+  if(arv == NULL) return NULL;
 
-  return ab;
+  arv->noRaiz = NULL;
+  arv->tamanho = 0;
+  //arv->profundidade = -1;
+
+  return arv;
 }
 
 void ab_apagar(AB **arv){
-  if(*arv != NULL){
-    no_apagar_recursivo((*arv)->noRaiz);
-    free(*arv);
-    *arv = NULL;
+  if(*arv == NULL) return;
+
+  no_apagar_recursivo((*arv)->noRaiz);
+  free(*arv);
+  *arv = NULL;
+
+  return;
+}
+
+bool ab_inserir(AB *arv, int elemento, int chavePai, int lado){
+  if(arv == NULL) return false;
+
+  NO *noNovo = no_criar(elemento, NULL, NULL);
+  if(noNovo == NULL) return false;
+
+  ab_inserir_no(arv->noRaiz, noNovo, lado, chavePai);
+  arv->tamanho++;
+
+  return true;
+}
+
+void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai){
+  if(noRaiz == NULL) return;
+
+  /*PÓS ORDEM*/
+  ab_inserir_no(noRaiz->noEsq, noInserir, lado, chavePai);
+  ab_inserir_no(noRaiz->noDir, noInserir, lado, chavePai);
+  if(chavePai == noRaiz->chave){
+    if(lado == ESQ){
+      noRaiz->noEsq = noInserir;
+    }
+    else{
+      noRaiz->noDir = noInserir;
+    }
   }
 
   return;
 }
 
-bool ab_inserir(AB *arv, int elemento);
 int ab_remover(AB *arv);
+
+int ab_busca(AB *arv, int chave);
 
 void ab_imprimir(AB *arv, int ordem){
   if(arv == NULL) return;
 
   switch(ordem){
     case PRE_ORDEM:{
-      ab_preordem(arv->noRaiz);
+      ab_imprimir_pre(arv->noRaiz);
+      printf("\n");
       break;
     }
     case EM_ORDEM:{
-      ab_emordem(arv->noRaiz);
+      ab_imprimir_em(arv->noRaiz);
+      printf("\n");
       break;
     }
     case POS_ORDEM:{
-      ab_posordem(arv->noRaiz);
+      ab_imprimir_pos(arv->noRaiz);
+      printf("\n");
       break;
+    }
+    default:{
+      return;
     }
   }
 }
 
-int ab_busca(AB *arv, int chave);
+void ab_imprimir_pre(NO *noRaiz){
+  if(noRaiz == NULL) return;
 
-AB *ab_copiar(AB *arv){
-  if(arv == NULL) return NULL;
+  printf("%d ", noRaiz->chave);
+  ab_imprimir_pre(noRaiz->noEsq);
+  ab_imprimir_pre(noRaiz->noDir);
 
-  AB *arvCopia = ab_criar();
-  if(arvCopia == NULL) return NULL;
+  return;
+}
 
-  arvCopia->noRaiz = no_copiar_recursivo(arv->noRaiz);
-  arvCopia->tam = arv->tam;
-  arvCopia->profund = arv->profund;
+void ab_imprimir_em(NO *noRaiz){
+  if(noRaiz == NULL) return;
 
-  return arvCopia;
+  ab_imprimir_em(noRaiz->noEsq);
+  printf("%d ", noRaiz->chave);
+  ab_imprimir_em(noRaiz->noDir);
+
+  return;
+}
+
+void ab_imprimir_pos(NO *noRaiz){
+  if(noRaiz == NULL) return;
+
+  ab_imprimir_pos(noRaiz->noEsq);
+  ab_imprimir_pos(noRaiz->noDir);
+  printf("%d ", noRaiz->chave);
+
+  return;
 }
 
 bool ab_cheia(AB *arv){
   if(arv == NULL) return false;
-  AB *arvTeste = ab_criar();
-  if(arvTeste != NULL){
-    ab_apagar(arvTeste);
-    return true;
-  }
-  return false;
-}
 
-void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai){
-  if(noRaiz == NULL) return;
+  NO *noTeste = no_criar(-1, NULL, NULL);
+  if(noTeste == NULL) return true;
 
-  ab_inserir_no(noRaiz->noEsq, noInserir, lado, chavePai);
-  ab_inserir_no(noRaiz->noDir, noInserir, lado, chavePai);
-
-  if(chavePai == noRaiz->chave){
-    if(lado == ESQ) noRaiz->noEsq = noInserir;
-    else if(lado == DIR) noRaiz->noDir = noInserir;
-  }
-
-  return;
-}
-
-void ab_preordem(NO *noRaiz){
-  if(noRaiz != NULL){
-    printf("%d ", noRaiz->chave);
-    ab_preordem(noRaiz->noEsq);
-    ab_preordem(noRaiz->noDir);
-  }
-  return;
-}
-
-void ab_emordem(NO *noRaiz){
-  if(noRaiz != NULL){
-    ab_emordem(noRaiz->noEsq);
-    printf("%d ", noRaiz->chave);
-    ab_emordem(noRaiz->noDir);
-  }
-  return;
-}
-
-void ab_posordem(NO *noRaiz){
-  if(noRaiz != NULL){
-    ab_posordem(noRaiz->noEsq);
-    ab_posordem(noRaiz->noDir);
-    printf("%d ", noRaiz->chave);
-  }
-  return;
+  no_apagar(&noTeste);
+  return true;
 }
 
 NO *no_criar(int chave, NO *noEsq, NO *noDir){
@@ -145,6 +152,7 @@ NO *no_criar(int chave, NO *noEsq, NO *noDir){
   noNovo->noDir = noDir;
   return noNovo;
 }
+
 void no_apagar(NO **no){
   if(*no == NULL) return;
 
@@ -152,23 +160,13 @@ void no_apagar(NO **no){
   *no = NULL;
   return;
 }
+
 void no_apagar_recursivo(NO *no){
   if(no == NULL) return;
 
   no_apagar_recursivo(no->noEsq);
   no_apagar_recursivo(no->noDir);
+
   no_apagar(&no);
-
   return;
-}
-NO *no_copiar_recursivo(NO *no){
-  if(no == NULL) return NULL;
-
-  NO *noNovo = no_criar(no->chave, NULL, NULL);
-  if(noNovo == NULL) return NULL;
-
-  noNovo->noEsq = no_copiar_recursivo(no->noEsq);
-  noNovo->noDir = no_copiar_recursivo(no->noDir);
-
-  return noNovo;
 }
