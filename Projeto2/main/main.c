@@ -4,6 +4,7 @@
 
 #include "../bibliotecas/conjunto.h"
 
+/*Constantes para melhor leitura do código*/
 #define TAD_LISTA 0
 #define TAD_ARVORE 1
 #define ERRO 1000010
@@ -14,16 +15,19 @@
 #define CONJ_B 2
 
 int main(void){
+  /*Escolha do TAD a ser utilizado*/
   int TAD;
   scanf("%d", &TAD);
 
   CONJUNTO *conjA = conjunto_criar(TAD);
   CONJUNTO *conjB = conjunto_criar(TAD);
 
+  /*Tamanho dos conjuntos*/
   int tamA, tamB;
   scanf("%d", &tamA);
   scanf("%d", &tamB);
 
+  /*Leitura dos elementos de cada conjunto*/
   for(int i = 0; i < tamA; i++){
     int elem;
     scanf("%d", &elem);
@@ -35,8 +39,11 @@ int main(void){
     conjunto_inserir(conjB, elem);
   }
 
+  /*Escolha da operação a ser realizada*/
   int op;
   scanf("%d", &op);
+
+  /*Realizar operação escolhida*/
   switch(op){
     case PERTENCE:{
       int elem;
@@ -66,7 +73,7 @@ int main(void){
       break;
     }
     default:{
-      printf("Operação inválida\n");
+      printf("Operacao invalida.\n");
       break;
     }
   }

@@ -78,6 +78,8 @@ void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai){
 
 int ab_remover(AB *arv, int chave){
   if(arv == NULL) return -1;
+
+  
 }
 
 void ab_remover_no(NO *noRaiz, int chave){

@@ -3,4 +3,8 @@
 - Permite a busca binária;
   - Se a árvore estiver balanceada, $O(\log(n))$;
   - Se a árvore não estiver balanceada, $O(n)$;
-- Percorrer em-ordem = Percorrer em ordem crescente;
+- Percorrer em-ordem = Percorrer em ordem crescente.
+
+## Operações
+- Remoção;
+  - Remover folhas é trivial;
