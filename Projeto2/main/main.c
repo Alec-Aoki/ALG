@@ -4,7 +4,7 @@
 
 #include "../bibliotecas/conjunto.h"
 
-/*Constantes para melhor leitura do código*/
+/*Constantes para tornar o código mais claro*/
 #define TAD_LISTA 0
 #define TAD_ARVORE 1
 #define ERRO 1000010
@@ -22,10 +22,14 @@ int main(void){
   CONJUNTO *conjA = conjunto_criar(TAD);
   CONJUNTO *conjB = conjunto_criar(TAD);
 
-  /*Tamanho dos conjuntos*/
   int tamA, tamB;
   scanf("%d", &tamA);
   scanf("%d", &tamB);
+
+  if(tamA == 0 && tamB == 0){
+    printf("Conjuntos vazios!\n");
+    return EXIT_SUCCESS;
+  }
 
   /*Leitura dos elementos de cada conjunto*/
   for(int i = 0; i < tamA; i++){
@@ -43,7 +47,6 @@ int main(void){
   int op;
   scanf("%d", &op);
 
-  /*Realizar operação escolhida*/
   switch(op){
     case PERTENCE:{
       int elem;
@@ -53,13 +56,12 @@ int main(void){
         printf("Pertence.\n");
       }
       else{
-        printf("Nao pertence.\n");
+        printf("Não pertence.\n");
       }
-      
       break;
     }
     case UNIAO:{
-      CONJUNTO *conjC = conjunto_uniao(conjA, conjB);
+      CONJUNTO *conjC = conjunto_uniao(conjA, conjB); 
       conjunto_imprimir(conjC);
 
       conjunto_apagar(&conjC);
