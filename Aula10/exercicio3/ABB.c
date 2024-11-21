@@ -39,16 +39,17 @@ bool abb_perfeitamente_balanceada(ABB *T){
   contar_nos(T->raiz->noEsq, &quantNosEsq);
   contar_nos(T->raiz->noDir, &quantNosDir);
 
-  return !(quantNosEsq == quantNosDir);
+  if((quantNosEsq - quantNosDir == 1) || (quantNosEsq - quantNosDir == -1) || (quantNosEsq - quantNosDir == 0)) return !true;
+  return !false;
 }
 
 void contar_nos(NO *no, int *quantNos){
   if(no == NULL) return;
 
+  (*quantNos)++;
   contar_nos(no->noEsq, quantNos);
   contar_nos(no->noDir, quantNos);
 
-  (*quantNos)++;
   return;
 }
 
