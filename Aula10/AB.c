@@ -12,6 +12,7 @@ struct no_{
 NO *no_criar(int chave, NO *noEsq, NO *noDir);
 void no_apagar(NO **no);
 void no_apagar_recursivo(NO *no);
+void no_trocar_max(NO *noTroca, NO *noRaiz, NO *noPai);
 
 struct ab_{
   NO *noRaiz;
@@ -23,7 +24,7 @@ void ab_imprimir_em(NO *noRaiz);
 void ab_imprimir_pos(NO *noRaiz);
 void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai);
 void ab_busca_no(NO *noRaiz, int chave, bool *pertence);
-void ab_remover_no(NO *noRaiz, int chave);
+bool ab_remover_no(NO **noRaiz, int chave);
 
 AB *ab_criar(void){
   AB *arv = (AB *) malloc(sizeof(AB));
@@ -76,22 +77,64 @@ void ab_inserir_no(NO *noRaiz, NO *noInserir, int lado, int chavePai){
   return;
 }
 
-int ab_remover(AB *arv, int chave){
-  if(arv == NULL) return -1;
+bool ab_remover(AB *arv, int chave){
+  if(arv == NULL) return false;
 
-  
+  return ab_remover_no(&(arv->noRaiz), chave);
 }
 
-void ab_remover_no(NO *noRaiz, int chave){
-  if(noRaiz == NULL) return;
+/*Casos a serem considerados na remoção:
+  1. O nó é folha;
+  2. O nó possui uma sub-árvore (esquerda ou direita);
+  3. O nó possui duas sub-árvores.
+*/
 
-  /*PÓS ORDEM*/
-  ab_remover_no(noRaiz->noEsq, chave);
-  ab_remover_no(noRaiz->noDir, chave);
-  if(chave == noRaiz->chave){
+bool ab_remover_no(NO **pontNoRaiz, int chave){
+  //Caso base da recursão:
+  if(*pontNoRaiz == NULL) return false;
 
+  if((*pontNoRaiz)->chave == chave){
+    if(((*pontNoRaiz)->noEsq == NULL) || ((*pontNoRaiz)->noDir == NULL)){
+      /*O nó atual tem um ou nenhum filho -> resolve os casos 1 e 2*/
+
+      NO *noRemovido = *pontNoRaiz;
+      if((*pontNoRaiz)->noEsq == NULL) *pontNoRaiz = (*pontNoRaiz)->noDir;
+      if((*pontNoRaiz)->noDir == NULL) *pontNoRaiz = (*pontNoRaiz)->noEsq;
+
+      no_apagar(&noRemovido);
+      return true;
+    }
+    else{
+      /*O nó atual tem dois filhos -> resolve o caso 3*/
+
+      /*Troca o nó atual pelo nó com a maior chave da sub-árvore
+      esquerda em relação ao nó atual*/
+      no_trocar_max((*pontNoRaiz)->noEsq, *pontNoRaiz, *pontNoRaiz);
+      return true;
+    }
+  }
+  else{
+    if((*pontNoRaiz)->chave > chave){
+      return ab_remover_no((*pontNoRaiz)->noEsq, chave);
+    }
+    else{
+      return ab_remover_no((*pontNoRaiz)->noDir, chave);
+    }
+  }
+}
+
+void no_trocar_max(NO *noTroca, NO *noRaiz, NO *noPai){
+  if(noTroca->noDir != NULL){
+    /*Achando o máximo nó folha direito possível*/
+    no_trocar_max(noTroca->noDir, noRaiz, noTroca);
+    return;
   }
 
+  if(noRaiz == noPai) noPai->noEsq = noTroca->noEsq;
+  else noPai->noDir = noTroca->noEsq;
+
+  noRaiz->chave = noTroca->chave;
+  no_apagar(&noTroca);
   return;
 }
 
