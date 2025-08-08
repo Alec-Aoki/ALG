@@ -1,2 +1,2 @@
 # ALG
-Notes taken from my Algorithms and Data Structures Class
+Notes taken from my Algorithms and Data Structures Classes
