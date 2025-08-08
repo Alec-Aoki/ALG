@@ -2,6 +2,8 @@
     "files.associations": {
         "stdlib.h": "c",
         "stdbool.h": "c",
-        "item.h": "c"
+        "item.h": "c",
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
