@@ -9,7 +9,6 @@ def main():
 
     lista = []
     lista.append(10)
-    lista.push(20)
 
     lista += [30, 12]
 
