@@ -4,6 +4,7 @@
         "stdbool.h": "c",
         "item.h": "c",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "cmath": "cpp"
     }
 }
