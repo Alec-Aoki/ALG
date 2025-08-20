@@ -23,34 +23,26 @@ e exibir um aviso;
 */
 
 /* Distância segundo a fórmula de haversine */
-long double haversine(double latC, double lonC, double lat, double lon){
+double haversine(double latC, double lonC, double lat, double lon){
     /* Conversão graus -> rad */
     lat = lat * PI / 180;
     lon = lon * PI / 180;
 
-    long double p1 = sin((lat - latC)/2) * sin((lat - latC)/2);
-    long double p2 = cos(lat) * cos(latC) * sin((lon - lonC)/2) * sin((lon - lonC)/2);
-    long double d = 2 * R * asin(sqrt(p1 + p2));
+    double p1 = sin((lat - latC)/2) * sin((lat - latC)/2);
+    double p2 = cos(lat) * cos(latC) * sin((lon - lonC)/2) * sin((lon - lonC)/2);
+    double d = 2 * R * asin(sqrt(p1 + p2));
 
     return d;
 }
 
-/* Print do ranking final (gambiarra kk) */
-void print_rank(int posicao, string nome, long double distancia){
-    /* Posição e nome */
+/* Print do ranking final */
+void print_rank(int posicao, string nome, double distancia){
+    /* Posição */
     if (posicao < 10) cout << " ";
-    cout << posicao << ". " << nome;
+    cout << posicao << ". ";
 
-    /* Espaço */
-    int numEspacos = 20;
-    for(int i = 0; i < (numEspacos - nome.size()); i++) cout << " ";
-    cout << " : ";
-
-    /* Espaço */
-    if (distancia < 10) cout << " ";
-    
-    /* Distância */
-    printf("%.3Lf km", distancia);
+    /* Nome e distância */
+    printf("%-20s : %6.3f km", nome.c_str(), distancia);
 
     /* Fantástico */
     if(distancia < 0.05) cout << " [FANTASTICO]";
@@ -72,9 +64,9 @@ int main(void){
     string nickname = "";
     double lat = 0;
     double lon = 0;
-    long double dist = 0;
+    double dist = 0;
     // Min-heap (top = menor valor) de pares (distância, nickname)
-    priority_queue<pair<long double, string>, vector<pair<long double, string>>, greater<pair<long double, string>>> filaPrioridade;
+    priority_queue<pair<double, string>, vector<pair<double, string>>, greater<pair<double, string>>> filaPrioridade;
 
     for(int i = 0; i < quantJogadores; i++){
         cin >> nickname >> lat >> lon;
@@ -85,11 +77,11 @@ int main(void){
         // Add. na fila
         filaPrioridade.push({dist, nickname});
 
-        printf("> [AVISO] MELHOR PALPITE: %.3Lfkm\n", (filaPrioridade.top()).first);
+        printf("> [AVISO] MELHOR PALPITE: %.3fkm\n", (filaPrioridade.top()).first);
     }
 
     cout << endl << "RANKING" << endl << "-------" << endl;
-    pair<long double, string> parTemporario;
+    pair<double, string> parTemporario;
     for(int i = 1; i <= quantJogadores; i++){
         parTemporario = filaPrioridade.top();
         print_rank(i, parTemporario.second, parTemporario.first);
