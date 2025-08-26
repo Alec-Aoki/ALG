@@ -10,7 +10,7 @@ int main(void){
     int quantLinhas, quantColunas;
     cin >> quantLinhas >> quantColunas;
 
-    // Geração da matriz de letras
+    /* Geração da matriz de letras */
     char matrizLetras[quantLinhas][quantColunas];
     string linha;
     // Lendo linha por linha da grid
@@ -23,7 +23,7 @@ int main(void){
         }
     }
 
-    // Geração da árvore trie com as palavras do dicionário
+    /* Geração da árvore trie com as palavras do dicionário */
     int quantPalavrasDic;
     cin >> quantPalavrasDic;
 
@@ -36,14 +36,14 @@ int main(void){
         trie_inserir(arvTrie, palavra);
     }
 
+    /* Buscando as palavras na grid */
     set<string> palavrasEncontradas;
     set<string> resFinal;
-    // Buscando as palavras na grid
-    // Para cada letra da grid, vamos verificar se ela existe
-    // na trie. Se não existir, vamos para a próxima. Se existir,
-    // verificamos todas as letras de todas as 8 direções, e assim por diante
+    // Percorrendo letra por letra da matriz
     for(int i = 0; i < quantLinhas; i++){
         for(int j = 0; j < quantColunas; j++){
+            // Pegando a linha em cada uma das 8 direções e jogando ela na busca
+            
             // Direita
             palavra.clear();
             for(int k = j; k < quantColunas; k++) palavra += matrizLetras[i][k];
@@ -129,6 +129,8 @@ int main(void){
     for(string str : resFinal){
         cout << str << endl;
     }
+
+    trie_destruir(arvTrie);
 
     return 0;
 }
