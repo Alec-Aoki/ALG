@@ -1,6 +1,7 @@
 # Dado um valor total e uma lista de moedas,
 # verifica se há uma combinação válida de moedas
 # para alcançar o troco
+# O(2^n)
 n = int(input())
 lista = [int(x) for x in input().rstrip().split(' ')]
 
