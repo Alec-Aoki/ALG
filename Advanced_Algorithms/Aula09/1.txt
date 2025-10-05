@@ -1,0 +1,1826 @@
+./main
+Estado inicial: 
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:3] [HP:1,Alt:2] [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:3,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:3,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:3] [HP:1,Alt:2] [HP:3,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:4,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:4,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:4,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:4,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:4,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:3] [HP:1,Alt:2] [HP:4,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:0] 
+  Coluna 2: [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:0] 
+  Coluna 2: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:0] 
+  Coluna 2: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:0] 
+  Coluna 2: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:0] 
+  Coluna 2: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:2] [HP:1,Alt:1] [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+  Coluna 2: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+  Coluna 2: [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+  Coluna 2: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:0] 
+  Coluna 2: [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:1,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:3,Alt:0] 
+  Coluna 1: [HP:2,Alt:2] [HP:1,Alt:1] [HP:4,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:1] [HP:1,Alt:0] 
+  Coluna 1: [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:1,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:2,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:3,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:0] 
+  Coluna 1: [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:2,Alt:0] 
+  Coluna 1: [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+--------- INICIO ----------
+Estado encontado na memoria
+Estado atual:
+  Coluna 0: [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:1,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+Estado atual:
+  Coluna 0: [HP:2,Alt:4] [HP:1,Alt:3] [HP:4,Alt:2] [HP:1,Alt:1] [HP:3,Alt:0] 
+
+--------- FIM ----------
+
+
+Resposta: 11
