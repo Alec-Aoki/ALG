@@ -16,8 +16,7 @@ struct Reliquia {
         alturaAnterior = alt;
     }
 
-    // Função de comparação por hp para usar
-    // no map
+    // Função de comparação por hp para usar no map
     bool operator<(const Reliquia& outraReliquia) const {
         if (hpAtual != outraReliquia.hpAtual)
             return hpAtual < outraReliquia.hpAtual;
@@ -31,21 +30,7 @@ struct Reliquia {
 using Estado = vector<vector<Reliquia>>; // Alias
 
 Estado bater_reliquia(const Estado &estadoAtual, int i_coluna, int i_reliqAtingida);
-vector<Reliquia> processar_dano_altura(vector<Reliquia> coluna);
 int resolver_DP(const Estado &estadoAtual, map<Estado, int> &memoria);
-
-// Função auxiliar para imprimir um estado (debug)
-void imprimirEstado(const Estado& estado) {
-    cout << "Estado atual:\n";
-    for (int i = 0; i < estado.size(); i++) {
-        cout << "  Coluna " << i << ": ";
-        for (int j = estado[i].size() - 1; j >= 0; j--) {  // Do topo para base
-            cout << "[HP:" << estado[i][j].hpAtual 
-                 << ",Alt:" << estado[i][j].alturaAnterior << "] ";
-        }
-        cout << "\n";
-    }
-}
 
 int main(void){
     /* Leitura da entrada */
@@ -63,9 +48,6 @@ int main(void){
     }
 
     estadoInicial.push_back(colunaInicial);
-    cout << "Estado inicial: " << endl;
-    imprimirEstado(estadoInicial);
-    cout << endl;
 
     /* Memoização */
     // Guarda a quantidade de golpes mínimos para resolver
@@ -73,14 +55,12 @@ int main(void){
     map<Estado, int> memoria;
 
     int quantGolpesMin = resolver_DP(estadoInicial, memoria);
-    cout << endl;
-    cout << "Resposta: " << quantGolpesMin << endl;
+    cout << quantGolpesMin << endl;
 
     return 0;
 }
 
 int resolver_DP(const Estado &estadoAtual, map<Estado, int> &memoria){
-    cout << "--------- INICIO ----------" << endl;
     // Caso base
     if(estadoAtual.empty()){
         return 0;
@@ -88,7 +68,6 @@ int resolver_DP(const Estado &estadoAtual, map<Estado, int> &memoria){
 
     // Memoização
     if(memoria.find(estadoAtual) != memoria.end()){
-        cout << "Estado encontado na memoria" << endl;
         return memoria[estadoAtual];
     }
 
@@ -110,12 +89,7 @@ int resolver_DP(const Estado &estadoAtual, map<Estado, int> &memoria){
 
     // Guardando o estado gerado na memoria
     memoria[estadoAtual] = quantGolpesMin;
-
-    imprimirEstado(estadoAtual);
-    cout << endl;
-
-    cout << "--------- FIM ----------" << endl << endl;
-
+    
     return quantGolpesMin;
 }
 
@@ -144,7 +118,16 @@ Estado bater_reliquia(const Estado &estadoAtual, int i_coluna, int i_reliqAtingi
             colunaAcima.push_back((estadoNovo[i_coluna])[i]);
         }
 
-        // Atualizando as alturas da coluna que cai
+        // Salvando altura original da base antes de atualizar
+        int alturaOriginalBase;
+        if(colunaAcima.empty()){
+            alturaOriginalBase = 0;
+        }
+        else {
+            alturaOriginalBase = (colunaAcima[0]).alturaAnterior;
+        }
+
+        // Atualizando as alturas da coluna que cai (novas posições na nova coluna)
         for(int i = 0; i < colunaAcima.size(); i++){
             colunaAcima[i].alturaAnterior = i; 
         }
@@ -152,13 +135,28 @@ Estado bater_reliquia(const Estado &estadoAtual, int i_coluna, int i_reliqAtingi
         // Atualizando a coluna atual (sem a reliquia destruida e as que cairam)
         estadoNovo[i_coluna] = colunaAbaixo;
 
-        // ..."e a relíquia mais a baixo na nova coluna sofre dano de queda igual à
+        // ..."e a relíquia mais a baixo na nova coluna sofre dano de queda igual à 
         // sua altura anterior"
         /* Processando o dano de altura e criando nova coluna */
         if(!colunaAcima.empty()){
-            colunaAcima = processar_dano_altura(colunaAcima);
+            // Aplicando dano de queda usando a altura anterior
+            colunaAcima[0].hpAtual -= alturaOriginalBase;
+            
+            // Processando danos em cascata
+            // Quando uma reliquia na posição 0 é destruída pela queda inicial,
+            // a próxima reliquia (que estava na posição 1) sofre dano igual a 1
+            // (a distância que caiu). Se essa também é destruída, a próxima
+            // (que estava na posição 2) sofre dano igual a 2, assim por diante.
+            int posicao = 0;
+            while((posicao < colunaAcima.size()) && (colunaAcima[posicao].hpAtual <= 0)){
+                colunaAcima.erase(colunaAcima.begin() + posicao);
+                if(posicao < colunaAcima.size()){
+                    // Dano = distância da queda = posição que ocupava na coluna que cai
+                    colunaAcima[posicao].hpAtual -= posicao;
+                }
+            }
 
-            // Se ainda sobrou alguma reliquia após os danos de altura, add. como nova
+            // Se ainda sobrou alguma reliquia apos os danos de altura, add. como nova
             // coluna
             if(!colunaAcima.empty()){
                 estadoNovo.push_back(colunaAcima);
@@ -177,26 +175,4 @@ Estado bater_reliquia(const Estado &estadoAtual, int i_coluna, int i_reliqAtingi
     sort(estadoNovo.begin(), estadoNovo.end());
 
     return estadoNovo;
-}
-
-/* Função recursiva para calcular danos de altura consecutivos */
-vector<Reliquia> processar_dano_altura(vector<Reliquia> coluna){
-    if(coluna.empty()){
-        return coluna;
-    }
-
-    // A reliquia na base sofre dano igual a sua altura anterior
-    coluna[0].hpAtual -= coluna[0].alturaAnterior;
-
-    // Se a reliquia bas for destruida na queda, chama de novo
-    if(coluna[0].hpAtual <= 0){
-        // Removendo a reliquia destruida
-        coluna.erase(coluna.begin());
-
-        // Continua calculando os danos recursivamente
-        return processar_dano_altura(coluna);
-    }
-
-    // Retorna a coluna nova após processar todas as quedas
-    return coluna;
 }
